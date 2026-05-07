@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horys · Legal — Privacy &amp; Terms</title>
+<meta name="description" content="HORys Privacy Policy and Terms of Service — PDPA-compliant, bilingual EN/TH.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Sans+Thai+Looped:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/horys.css?v=1778280000">
+<link rel="stylesheet" href="static/horys-dashboard.css?v=1778280000">
+<style>
+  /* ============================================
+     LEGAL PAGE — corporate / banking-grade theme
+     Aligns with horys-dashboard.css design tokens
+     ============================================ */
+
+  body { background: var(--color-bone); }
+
+  /* ----- Header toolbar ----- */
+  .legal-toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-paper);
+  }
+  .lang-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--color-muted);
+    padding: 7px 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    min-width: 44px;
+  }
+  .lang-switch button.active {
+    background: var(--color-teal-deep);
+    color: var(--color-bone);
+  }
+  .lang-switch button + button {
+    border-left: 1px solid var(--color-line);
+  }
+  .lang-switch button.active + button { border-left-color: var(--color-teal-deep); }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-teal-deep);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--color-teal-dark); }
+
+  /* ----- Page meta block ----- */
+  .legal-meta {
+    max-width: 1080px;
+    margin: 0 auto var(--space-8);
+  }
+  .legal-version {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-left: 3px solid var(--color-teal-deep);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+  }
+  .legal-version .key { color: var(--color-muted); margin-right: 4px; }
+  .legal-version .sep { color: var(--color-line); }
+
+  /* ----- Tabs ----- */
+  .legal-tabs {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--color-line);
+    margin-bottom: var(--space-6);
+  }
+  .legal-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: var(--space-4) var(--space-6);
+    font-family: var(--font-display-thai);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+  }
+  .legal-tab:hover { color: var(--color-ink); }
+  .legal-tab.active {
+    color: var(--color-teal-deep);
+    border-bottom-color: var(--color-teal-deep);
+  }
+
+  /* ----- Layout: TOC sidebar + reading column ----- */
+  .legal-layout {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+  .legal-toc {
+    position: sticky;
+    top: 90px;
+    align-self: start;
+    padding: var(--space-4) 0;
+    border-left: 1px solid var(--color-line);
+  }
+  .legal-toc h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    font-weight: 500;
+    margin: 0 0 var(--space-3) var(--space-4);
+  }
+  .legal-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .legal-toc li { margin: 0; }
+  .legal-toc a {
+    display: block;
+    padding: 6px var(--space-4);
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    transition: all 0.15s;
+  }
+  .legal-toc a:hover {
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+  .legal-toc a.active {
+    color: var(--color-teal-deep);
+    border-left-color: var(--color-teal-deep);
+    font-weight: 500;
+  }
+
+  /* ----- Reading column ----- */
+  .legal-doc {
+    max-width: 720px;
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    padding: var(--space-8) var(--space-8) var(--space-12);
+  }
+  .legal-doc h2 {
+    font-family: var(--font-display-thai);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--color-ink);
+    margin: var(--space-8) 0 var(--space-4);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 100px;
+  }
+  .legal-doc h2:first-child { margin-top: 0; }
+  .legal-doc h2 .num {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-teal-deep);
+    margin-right: var(--space-3);
+    letter-spacing: 0.08em;
+    vertical-align: 2px;
+  }
+  .legal-doc h3 {
+    font-family: var(--font-display-thai);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-ink);
+    margin: var(--space-6) 0 var(--space-2);
+    letter-spacing: -0.005em;
+  }
+  .legal-doc p {
+    color: var(--color-ink);
+    line-height: 1.75;
+    font-size: 15px;
+    margin: 0 0 var(--space-3);
+  }
+  .legal-doc p .term {
+    font-family: var(--font-display-latin);
+    font-style: italic;
+    color: var(--color-teal-deep);
+    font-weight: 500;
+  }
+  .legal-doc ul, .legal-doc ol {
+    color: var(--color-ink);
+    line-height: 1.75;
+    font-size: 15px;
+    margin: 0 0 var(--space-4) var(--space-6);
+    padding-left: var(--space-3);
+  }
+  .legal-doc li { margin-bottom: var(--space-2); }
+  .legal-doc strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .legal-callout {
+    margin: var(--space-6) 0;
+    padding: var(--space-6) var(--space-6);
+    background: var(--color-cream-deep);
+    border-left: 3px solid var(--color-teal-deep);
+    border-radius: var(--radius-md);
+  }
+  .legal-callout .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-teal-deep);
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+  }
+  .legal-callout p { margin: 0; font-size: 14px; }
+
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-4) 0 var(--space-6);
+    font-size: 13px;
+  }
+  .legal-table th {
+    background: var(--color-cream-deep);
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-teal-deep);
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .legal-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-ink);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .legal-table tr:last-child td { border-bottom: 0; }
+
+  .legal-doc .placeholder {
+    background: rgba(201, 149, 68, 0.12);
+    color: var(--color-teal-dark);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  /* ----- Disclaimer block — formal CAPS warning ----- */
+  .legal-disclaimer {
+    margin: var(--space-6) 0;
+    padding: var(--space-6);
+    background: var(--color-paper);
+    border: 1px solid var(--color-teal-dark);
+    border-radius: var(--radius-md);
+  }
+  .legal-disclaimer p {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 12px !important;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  body.lang-th .legal-disclaimer p {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px !important;
+  }
+
+  /* ----- Bilingual visibility (default = TH per user preference) ----- */
+  body.lang-en [lang="th"] { display: none !important; }
+  body.lang-th [lang="en"] { display: none !important; }
+
+  /* ----- Tab visibility ----- */
+  .doc-section { display: none; }
+  .doc-section.active { display: block; }
+  .toc-section { display: none; }
+  .toc-section.active { display: block; }
+
+  /* ----- Print styles ----- */
+  @media print {
+    body { background: white; }
+    .brand-header, .legal-toolbar, .legal-tabs, .legal-toc, footer { display: none !important; }
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-doc { border: 0; padding: 0; max-width: none; }
+    .legal-doc h2 { page-break-after: avoid; }
+    .doc-section { display: block !important; page-break-before: always; }
+  }
+
+  /* ----- Responsive ----- */
+  @media (max-width: 1024px) {
+    .legal-layout { grid-template-columns: 200px 1fr; gap: var(--space-6); }
+  }
+  @media (max-width: 900px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-toc {
+      position: static;
+      border-left: 0;
+      border-top: 1px solid var(--color-line);
+      border-bottom: 1px solid var(--color-line);
+      padding: var(--space-4) 0;
+      order: 2;
+      margin-top: var(--space-6);
+    }
+    .legal-toc a { padding: 8px var(--space-3); }
+    .legal-doc { order: 1; padding: var(--space-6); }
+  }
+  @media (max-width: 640px) {
+    .legal-meta { padding: 0 var(--space-3); }
+    .legal-tabs { overflow-x: auto; padding: 0 var(--space-3); }
+    .legal-tab { font-size: 14px; padding: var(--space-3) var(--space-4); white-space: nowrap; flex: 0 0 auto; }
+    .legal-doc { padding: var(--space-6); }
+    .legal-doc h2 { font-size: 19px; }
+    .legal-doc h3 { font-size: 15px; }
+    .legal-doc p, .legal-doc li { font-size: 14px; }
+    .legal-version { font-size: 10px; }
+  }
+</style>
+</head>
+<body class="lang-th">
+
+<header class="brand-header">
+  <a href="#" class="brand-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <img class="mark" src="static/horys-mark.svg" alt="HORys">
+    <div>
+      <div class="name">HOR<span class="accent">ys</span></div>
+      <div class="brand-tagline" lang="en">Celestial Timing — Legal</div>
+      <div class="brand-tagline" lang="th">นโยบายและเงื่อนไข</div>
+    </div>
+  </a>
+  <div class="legal-toolbar">
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="th" class="active" aria-pressed="true">TH</button>
+    </div>
+    <a href="https://t.me/HORysBot" class="back-link" lang="en" target="_blank" rel="noopener">→ HORys Bot</a>
+    <a href="https://t.me/HORysBot" class="back-link" lang="th" target="_blank" rel="noopener">→ HORys บอท</a>
+  </div>
+</header>
+
+<main>
+  <div class="legal-meta">
+    <div class="section-label" lang="en">Legal Notice</div>
+    <div class="section-label" lang="th">เอกสารทางกฎหมาย</div>
+    <h1 class="section-title">
+      <span lang="en">Privacy <span class="italic-accent">&amp;</span> Terms</span>
+      <span lang="th">นโยบายความเป็นส่วนตัว <span class="italic-accent">&amp;</span> ข้อกำหนดการใช้บริการ</span>
+    </h1>
+    <div class="legal-version">
+      <span><span class="key">Version</span><span id="docVersion">1.0</span></span>
+      <span class="sep">·</span>
+      <span><span class="key">Effective</span><span id="effectiveDate">8 May 2026</span></span>
+      <span class="sep">·</span>
+      <span><span class="key">Jurisdiction</span>Thailand · PDPA B.E. 2562</span>
+    </div>
+  </div>
+
+  <div class="legal-tabs" role="tablist">
+    <button class="legal-tab active" data-tab="privacy" role="tab" aria-selected="true">
+      <span lang="en">Privacy Policy</span>
+      <span lang="th">นโยบายความเป็นส่วนตัว</span>
+    </button>
+    <button class="legal-tab" data-tab="terms" role="tab" aria-selected="false">
+      <span lang="en">Terms of Service</span>
+      <span lang="th">ข้อกำหนดการใช้บริการ</span>
+    </button>
+  </div>
+
+  <div class="legal-layout">
+
+    <aside class="legal-toc" aria-label="Table of contents">
+      <!-- ============ TOC: Privacy ============ -->
+      <div class="toc-section active" data-toc="privacy">
+        <h4 lang="en">On this page</h4>
+        <h4 lang="th">หัวข้อ</h4>
+        <ol>
+          <li><a href="#p-1"><span lang="en">1. Introduction</span><span lang="th">1. บทนำ</span></a></li>
+          <li><a href="#p-2"><span lang="en">2. Definitions</span><span lang="th">2. คำนิยาม</span></a></li>
+          <li><a href="#p-3"><span lang="en">3. Personal Data Collected</span><span lang="th">3. ข้อมูลที่เก็บ</span></a></li>
+          <li><a href="#p-4"><span lang="en">4. Sources of Data</span><span lang="th">4. แหล่งที่มาของข้อมูล</span></a></li>
+          <li><a href="#p-5"><span lang="en">5. Lawful Basis</span><span lang="th">5. ฐานทางกฎหมาย</span></a></li>
+          <li><a href="#p-6"><span lang="en">6. Purposes of Processing</span><span lang="th">6. วัตถุประสงค์ในการประมวลผล</span></a></li>
+          <li><a href="#p-7"><span lang="en">7. Third-Party Processors</span><span lang="th">7. ผู้ประมวลผลภายนอก</span></a></li>
+          <li><a href="#p-8"><span lang="en">8. Cross-Border Transfers</span><span lang="th">8. การส่งข้อมูลข้ามแดน</span></a></li>
+          <li><a href="#p-9"><span lang="en">9. Cookies &amp; Local Storage</span><span lang="th">9. คุกกี้และที่เก็บข้อมูล</span></a></li>
+          <li><a href="#p-10"><span lang="en">10. Data Retention</span><span lang="th">10. ระยะเวลาเก็บข้อมูล</span></a></li>
+          <li><a href="#p-11"><span lang="en">11. Security Measures</span><span lang="th">11. มาตรการรักษาความปลอดภัย</span></a></li>
+          <li><a href="#p-12"><span lang="en">12. Data Subject Rights</span><span lang="th">12. สิทธิของเจ้าของข้อมูล</span></a></li>
+          <li><a href="#p-13"><span lang="en">13. Minors</span><span lang="th">13. ผู้เยาว์</span></a></li>
+          <li><a href="#p-14"><span lang="en">14. Changes</span><span lang="th">14. การแก้ไขนโยบาย</span></a></li>
+          <li><a href="#p-15"><span lang="en">15. Contact</span><span lang="th">15. ติดต่อเรา</span></a></li>
+        </ol>
+      </div>
+      <!-- ============ TOC: Terms ============ -->
+      <div class="toc-section" data-toc="terms">
+        <h4 lang="en">On this page</h4>
+        <h4 lang="th">หัวข้อ</h4>
+        <ol>
+          <li><a href="#t-1"><span lang="en">1. Acceptance</span><span lang="th">1. การยอมรับ</span></a></li>
+          <li><a href="#t-2"><span lang="en">2. Definitions</span><span lang="th">2. คำนิยาม</span></a></li>
+          <li><a href="#t-3"><span lang="en">3. Service Description</span><span lang="th">3. รายละเอียดบริการ</span></a></li>
+          <li><a href="#t-4"><span lang="en">4. Eligibility</span><span lang="th">4. คุณสมบัติผู้ใช้</span></a></li>
+          <li><a href="#t-5"><span lang="en">5. Account &amp; Access</span><span lang="th">5. บัญชีผู้ใช้</span></a></li>
+          <li><a href="#t-6"><span lang="en">6. User Obligations</span><span lang="th">6. หน้าที่ของผู้ใช้</span></a></li>
+          <li><a href="#t-7"><span lang="en">7. Prohibited Use</span><span lang="th">7. ข้อห้าม</span></a></li>
+          <li><a href="#t-8"><span lang="en">8. AI Disclaimer</span><span lang="th">8. ข้อจำกัดของผลลัพธ์ AI</span></a></li>
+          <li><a href="#t-9"><span lang="en">9. Intellectual Property</span><span lang="th">9. ทรัพย์สินทางปัญญา</span></a></li>
+          <li><a href="#t-10"><span lang="en">10. Service Availability</span><span lang="th">10. การให้บริการ</span></a></li>
+          <li><a href="#t-11"><span lang="en">11. Disclaimers</span><span lang="th">11. ข้อสงวนสิทธิ์</span></a></li>
+          <li><a href="#t-12"><span lang="en">12. Limitation of Liability</span><span lang="th">12. ข้อจำกัดความรับผิด</span></a></li>
+          <li><a href="#t-13"><span lang="en">13. Indemnification</span><span lang="th">13. การชดใช้ค่าเสียหาย</span></a></li>
+          <li><a href="#t-14"><span lang="en">14. Termination</span><span lang="th">14. การยุติการให้บริการ</span></a></li>
+          <li><a href="#t-15"><span lang="en">15. Governing Law</span><span lang="th">15. กฎหมายที่บังคับใช้</span></a></li>
+          <li><a href="#t-16"><span lang="en">16. Disputes</span><span lang="th">16. การระงับข้อพิพาท</span></a></li>
+          <li><a href="#t-17"><span lang="en">17. Changes</span><span lang="th">17. การแก้ไขข้อกำหนด</span></a></li>
+          <li><a href="#t-18"><span lang="en">18. Contact</span><span lang="th">18. ติดต่อเรา</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <article class="legal-doc">
+
+      <!-- ================================================================
+           PRIVACY POLICY
+           ================================================================ -->
+      <section class="doc-section active" data-section="privacy">
+
+        <!-- ----- 1. Introduction ----- -->
+        <h2 id="p-1"><span class="num">1</span><span lang="en">Introduction</span><span lang="th">บทนำ</span></h2>
+        <div lang="en">
+          <p>This Privacy Policy (the <span class="term">"Policy"</span>) describes how HORys (<span class="term">"HORys"</span>, <span class="term">"we"</span>, <span class="term">"us"</span>, or <span class="term">"our"</span>) collects, uses, discloses, retains, and safeguards Personal Data when you interact with our Telegram bot service operating as <strong>@HORysBot</strong> (the <span class="term">"Service"</span>).</p>
+          <p>The Service is operated by <strong>HORys</strong> (the <span class="term">"Operator"</span>, the <span class="term">"Data Controller"</span>) in accordance with the Personal Data Protection Act B.E. 2562 (2019) of the Kingdom of Thailand (the <span class="term">"PDPA"</span>) and any subordinate regulations, guidelines, and notifications issued by the Personal Data Protection Committee (the <span class="term">"PDPC"</span>).</p>
+          <p>By using the Service, you acknowledge that you have read and understood this Policy. Where consent is the lawful basis for processing, your consent is sought separately and may be withdrawn at any time as described in Section 12.</p>
+        </div>
+        <div lang="th">
+          <p>นโยบายความเป็นส่วนตัวฉบับนี้ (<span class="term">“นโยบาย”</span>) อธิบายแนวทางที่ HORys (<span class="term">“HORys”</span>, <span class="term">“เรา”</span>) เก็บรวบรวม ใช้ เปิดเผย เก็บรักษา และคุ้มครองข้อมูลส่วนบุคคล เมื่อท่านใช้งานบริการบอท Telegram ภายใต้ชื่อ <strong>@HORysBot</strong> (<span class="term">“บริการ”</span>)</p>
+          <p>บริการนี้ดำเนินการโดย <strong>HORys</strong> (<span class="term">“ผู้ให้บริการ”</span>, <span class="term">“ผู้ควบคุมข้อมูลส่วนบุคคล”</span>) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (<span class="term">“พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล”</span> หรือ <span class="term">“PDPA”</span>) รวมถึงประกาศและแนวปฏิบัติของคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (<span class="term">“กคส.”</span>)</p>
+          <p>การใช้บริการถือว่าท่านได้อ่านและเข้าใจนโยบายฉบับนี้แล้ว ในกรณีที่ฐานทางกฎหมายในการประมวลผลคือความยินยอม เราจะขอความยินยอมจากท่านแยกต่างหาก และท่านสามารถเพิกถอนความยินยอมได้ทุกเมื่อตามที่ระบุในข้อ 12</p>
+        </div>
+
+        <!-- ----- 2. Definitions ----- -->
+        <h2 id="p-2"><span class="num">2</span><span lang="en">Definitions</span><span lang="th">คำนิยาม</span></h2>
+        <div lang="en">
+          <p>For the purposes of this Policy, the following terms shall have the meanings set forth below:</p>
+          <ul>
+            <li><span class="term">"Personal Data"</span> means any information relating to an identified or identifiable natural person, in line with Section 6 of the PDPA.</li>
+            <li><span class="term">"Sensitive Personal Data"</span> means data prescribed in Section 26 of the PDPA, including data on racial origin, religion, sexual behaviour, criminal records, health, disability, biometric data, or other data of similar nature. Birth data alone is not classified as Sensitive Personal Data.</li>
+            <li><span class="term">"Data Subject"</span> means the natural person to whom Personal Data pertains.</li>
+            <li><span class="term">"Processing"</span> means any operation performed on Personal Data, including collection, use, disclosure, storage, and erasure.</li>
+            <li><span class="term">"Data Processor"</span> means a person or entity that processes Personal Data on behalf of, and under the instructions of, the Data Controller.</li>
+            <li><span class="term">"Telegram"</span> means the messaging platform operated by Telegram FZ-LLC.</li>
+            <li><span class="term">"Anthropic"</span> means Anthropic, PBC, the provider of the Claude large language model API.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <p>เพื่อประโยชน์ในการตีความนโยบายฉบับนี้ ให้คำต่อไปนี้มีความหมายดังต่อไปนี้</p>
+          <ul>
+            <li><span class="term">“ข้อมูลส่วนบุคคล”</span> หมายถึง ข้อมูลเกี่ยวกับบุคคลซึ่งทำให้สามารถระบุตัวบุคคลนั้นได้ ไม่ว่าทางตรงหรือทางอ้อม ตามมาตรา 6 ของ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล</li>
+            <li><span class="term">“ข้อมูลส่วนบุคคลที่มีความอ่อนไหว”</span> หมายถึง ข้อมูลตามมาตรา 26 ของ พ.ร.บ. ดังกล่าว เช่น เชื้อชาติ ศาสนา ข้อมูลสุขภาพ ข้อมูลชีวภาพ ข้อมูลพันธุกรรม ทั้งนี้ ข้อมูลเวลาเกิดเพียงอย่างเดียวไม่จัดเป็นข้อมูลที่มีความอ่อนไหว</li>
+            <li><span class="term">“เจ้าของข้อมูลส่วนบุคคล”</span> หมายถึง บุคคลที่ข้อมูลส่วนบุคคลนั้นกล่าวถึง</li>
+            <li><span class="term">“การประมวลผล”</span> หมายถึง การดำเนินการใด ๆ กับข้อมูลส่วนบุคคล รวมถึงการเก็บรวบรวม ใช้ เปิดเผย จัดเก็บ และลบ</li>
+            <li><span class="term">“ผู้ประมวลผลข้อมูลส่วนบุคคล”</span> หมายถึง บุคคลหรือนิติบุคคลที่ดำเนินการประมวลผลข้อมูลส่วนบุคคลตามคำสั่งของผู้ควบคุมข้อมูลส่วนบุคคล</li>
+            <li><span class="term">“Telegram”</span> หมายถึง แพลตฟอร์มสื่อสารที่ดำเนินการโดย Telegram FZ-LLC</li>
+            <li><span class="term">“Anthropic”</span> หมายถึง Anthropic, PBC ผู้ให้บริการ API ของโมเดลภาษาขนาดใหญ่ Claude</li>
+          </ul>
+        </div>
+
+        <!-- ----- 3. Personal Data Collected ----- -->
+        <h2 id="p-3"><span class="num">3</span><span lang="en">Personal Data We Collect</span><span lang="th">ข้อมูลส่วนบุคคลที่เราเก็บรวบรวม</span></h2>
+        <div lang="en">
+          <h3>3.1 Data You Provide</h3>
+          <ul>
+            <li><strong>Birth data</strong>: date of birth, time of birth (if provided), and place of birth (city or province), used solely for astrological computation;</li>
+            <li><strong>Telegram identifiers</strong>: Telegram user ID and, where publicly available, Telegram username and display name;</li>
+            <li><strong>Free-text inputs</strong>: questions, names, or numerical data submitted via bot menus (e.g., a name for analysis, a phone number for numerology);</li>
+            <li><strong>Saved preferences</strong>: bookmarks of charts, lottery searches, or named profiles, when you elect to save them.</li>
+          </ul>
+          <h3>3.2 Data Collected Automatically</h3>
+          <ul>
+            <li>Bot interaction logs (commands, menu selections, timestamps, and computed outputs);</li>
+            <li>Technical metadata (request timestamps, error events) for service operation and debugging;</li>
+            <li>Token usage analytics (tokens consumed per feature, cost in THB) for cost monitoring.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <h3>3.1 ข้อมูลที่ท่านให้กับเรา</h3>
+          <ul>
+            <li><strong>ข้อมูลการเกิด</strong>: วันเกิด เวลาเกิด (หากระบุ) และสถานที่เกิด (จังหวัดหรือเมือง) ใช้เฉพาะเพื่อการคำนวณทางโหราศาสตร์</li>
+            <li><strong>ข้อมูลระบุตัวตนใน Telegram</strong>: หมายเลขผู้ใช้ (Telegram User ID) และชื่อผู้ใช้ที่ตั้งเปิดเผย (หากมี)</li>
+            <li><strong>ข้อมูลที่ป้อนผ่านบอท</strong>: ข้อความ คำถาม ชื่อ-นามสกุล หรือข้อมูลตัวเลขที่ท่านส่งผ่านเมนู เช่น ชื่อสำหรับวิเคราะห์ หมายเลขโทรศัพท์เพื่อตรวจเลขมงคล</li>
+            <li><strong>ข้อมูลที่บันทึกตามคำสั่ง</strong>: ดวงที่บันทึก หวยที่ค้นไว้ หรือโปรไฟล์ที่ท่านตั้งชื่อ</li>
+          </ul>
+          <h3>3.2 ข้อมูลที่ระบบเก็บโดยอัตโนมัติ</h3>
+          <ul>
+            <li>บันทึกการใช้งานบอท (คำสั่ง การกดเมนู เวลาเข้าใช้ และผลลัพธ์ที่คำนวณ)</li>
+            <li>ข้อมูลทางเทคนิค (เวลาที่เกิดข้อผิดพลาด เหตุการณ์ระบบ) เพื่อการบริหารจัดการและตรวจสอบ</li>
+            <li>ข้อมูลการใช้ token (จำนวน token ต่อฟีเจอร์ ต้นทุนเป็นบาท) เพื่อการควบคุมค่าใช้จ่าย</li>
+          </ul>
+        </div>
+
+        <!-- ----- 4. Sources ----- -->
+        <h2 id="p-4"><span class="num">4</span><span lang="en">Sources of Personal Data</span><span lang="th">แหล่งที่มาของข้อมูล</span></h2>
+        <div lang="en">
+          <p>We collect Personal Data from the following sources:</p>
+          <ul>
+            <li><strong>Directly from you</strong>: through your interactions with @HORysBot on Telegram;</li>
+            <li><strong>From Telegram</strong>: limited account identifiers required for message routing, transmitted by Telegram pursuant to its own policies;</li>
+            <li><strong>From the Service itself</strong>: automatically generated logs and analytics arising from your use of the Service.</li>
+          </ul>
+          <p>We do not purchase, lease, or otherwise acquire Personal Data from data brokers or third-party aggregators.</p>
+        </div>
+        <div lang="th">
+          <p>เราเก็บรวบรวมข้อมูลส่วนบุคคลจากแหล่งต่อไปนี้</p>
+          <ul>
+            <li><strong>โดยตรงจากท่าน</strong>: ผ่านการใช้งานบอท @HORysBot บน Telegram</li>
+            <li><strong>จาก Telegram</strong>: ข้อมูลระบุบัญชีเท่าที่จำเป็นต่อการส่งข้อความ ซึ่ง Telegram ส่งให้ตามนโยบายของบริษัทดังกล่าว</li>
+            <li><strong>จากระบบเอง</strong>: บันทึกและสถิติที่ระบบสร้างโดยอัตโนมัติจากการใช้งาน</li>
+          </ul>
+          <p>เราไม่ได้ซื้อ เช่า หรือจัดหาข้อมูลส่วนบุคคลจากผู้ค้าข้อมูลหรือผู้รวบรวมข้อมูลภายนอก</p>
+        </div>
+
+        <!-- ----- 5. Lawful Basis ----- -->
+        <h2 id="p-5"><span class="num">5</span><span lang="en">Lawful Basis for Processing</span><span lang="th">ฐานทางกฎหมายในการประมวลผล</span></h2>
+        <div lang="en">
+          <p>We rely on the following lawful bases under the PDPA, depending on the activity:</p>
+          <ul>
+            <li><strong>Performance of contract</strong> (Section 24(3)) — to deliver the Service you have requested;</li>
+            <li><strong>Consent</strong> (Section 24(1)) — for processing that requires explicit opt-in, including when you elect to save personal birth records;</li>
+            <li><strong>Legitimate interest</strong> (Section 24(5)) — for service operation, security monitoring, fraud prevention, and aggregate analytics, where such interest is not overridden by your fundamental rights;</li>
+            <li><strong>Compliance with law</strong> (Section 24(6)) — to comply with applicable Thai law and lawful orders of competent authorities.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <p>เราอาศัยฐานทางกฎหมายต่อไปนี้ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล โดยแตกต่างกันตามกิจกรรม</p>
+          <ul>
+            <li><strong>การปฏิบัติตามสัญญา</strong> (มาตรา 24(3)) — เพื่อให้บริการตามที่ท่านร้องขอ</li>
+            <li><strong>ความยินยอม</strong> (มาตรา 24(1)) — สำหรับการประมวลผลที่ต้องได้รับความยินยอมโดยชัดแจ้ง เช่น เมื่อท่านเลือกบันทึกดวงไว้ในระบบ</li>
+            <li><strong>ประโยชน์โดยชอบด้วยกฎหมาย</strong> (มาตรา 24(5)) — เพื่อการบริหารระบบ เฝ้าระวังความปลอดภัย ป้องกันการฉ้อโกง และการวิเคราะห์เชิงสถิติแบบไม่ระบุตัวบุคคล โดยไม่กระทบสิทธิอันชอบธรรมของท่านอย่างมีนัยสำคัญ</li>
+            <li><strong>การปฏิบัติตามกฎหมาย</strong> (มาตรา 24(6)) — เพื่อปฏิบัติตามกฎหมายไทยและคำสั่งโดยชอบของหน่วยงานที่มีอำนาจ</li>
+          </ul>
+        </div>
+
+        <!-- ----- 6. Purposes ----- -->
+        <h2 id="p-6"><span class="num">6</span><span lang="en">Purposes of Processing</span><span lang="th">วัตถุประสงค์ในการประมวลผล</span></h2>
+        <div lang="en">
+          <p>Personal Data is processed for the following purposes:</p>
+          <ul>
+            <li>To compute astrological readings, auspicious times, compatibility scores, numerology results, and lottery suggestions;</li>
+            <li>To deliver the requested outputs to you via Telegram;</li>
+            <li>To save your preferences and named profiles for future retrieval, where you have elected to do so;</li>
+            <li>To monitor service performance, detect abuse, and respond to incidents;</li>
+            <li>To produce aggregate, non-identifying analytics on Service usage and cost;</li>
+            <li>To meet legal, regulatory, or audit requirements.</li>
+          </ul>
+          <p>Personal Data is not used for behavioural advertising, profiling for marketing purposes, or automated decisions producing legal or similarly significant effects on you.</p>
+        </div>
+        <div lang="th">
+          <p>เราประมวลผลข้อมูลส่วนบุคคลเพื่อวัตถุประสงค์ต่อไปนี้</p>
+          <ul>
+            <li>เพื่อคำนวณคำพยากรณ์ทางโหราศาสตร์ ฤกษ์มงคล ความเข้ากันได้ เลขศาสตร์ และคำแนะนำเรื่องหวย</li>
+            <li>เพื่อส่งผลลัพธ์ที่ท่านร้องขอผ่าน Telegram</li>
+            <li>เพื่อบันทึกข้อมูลและโปรไฟล์ที่ท่านเลือกบันทึก เพื่อการเรียกใช้ในภายหลัง</li>
+            <li>เพื่อตรวจสอบสมรรถนะของระบบ ตรวจจับการใช้งานในทางที่ผิด และตอบสนองเหตุการณ์ผิดปกติ</li>
+            <li>เพื่อวิเคราะห์ภาพรวมการใช้งานและต้นทุน โดยไม่ระบุตัวบุคคล</li>
+            <li>เพื่อปฏิบัติตามข้อกำหนดทางกฎหมาย หน่วยงานกำกับดูแล และการตรวจสอบ</li>
+          </ul>
+          <p>เราไม่นำข้อมูลส่วนบุคคลไปใช้เพื่อโฆษณาตามพฤติกรรม การจัดทำโปรไฟล์เพื่อการตลาด หรือการตัดสินใจอัตโนมัติที่มีผลกระทบทางกฎหมายหรือผลกระทบที่มีนัยสำคัญในทำนองเดียวกันต่อท่าน</p>
+        </div>
+
+        <!-- ----- 7. Third-Party Processors ----- -->
+        <h2 id="p-7"><span class="num">7</span><span lang="en">Third-Party Processors and Recipients</span><span lang="th">ผู้ประมวลผลภายนอกและผู้รับข้อมูล</span></h2>
+        <div lang="en">
+          <p>We engage the following Data Processors. Each is bound by contractual or platform-imposed obligations consistent with the PDPA:</p>
+          <table class="legal-table">
+            <thead>
+              <tr><th>Processor</th><th>Purpose</th><th>Location</th><th>Safeguards</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Anthropic, PBC</strong></td>
+                <td>AI inference for astrological narrative content (Claude API)</td>
+                <td>United States</td>
+                <td>Contractual data-processing terms; transient processing only; no Personal Data is retained by Anthropic for model training under their commercial API.</td>
+              </tr>
+              <tr>
+                <td><strong>Telegram FZ-LLC</strong></td>
+                <td>Message delivery</td>
+                <td>United Arab Emirates / global</td>
+                <td>Required for Service delivery; Telegram processes messages under its own privacy policy. The user's relationship with Telegram is independent of HORys.</td>
+              </tr>
+              <tr>
+                <td><strong>Cloudflare, Inc.</strong></td>
+                <td>Network transit and DDoS protection</td>
+                <td>Global edge network</td>
+                <td>TLS termination only; no persistent Personal Data storage. Connection metadata may be processed for security purposes.</td>
+              </tr>
+              <tr>
+                <td><strong>Self-hosted infrastructure</strong></td>
+                <td>Primary application and data storage</td>
+                <td>Thailand</td>
+                <td>Encrypted volumes; access controlled and logged; physical custody by the Operator.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Where third-party services are required for Service delivery, your continued use of the Service constitutes acknowledgment that such transmission is necessary.</p>
+        </div>
+        <div lang="th">
+          <p>เราใช้ผู้ประมวลผลข้อมูลภายนอกดังต่อไปนี้ โดยแต่ละรายมีข้อผูกพันตามสัญญาหรือนโยบายของแพลตฟอร์มที่สอดคล้องกับ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล</p>
+          <table class="legal-table">
+            <thead>
+              <tr><th>ผู้ประมวลผล</th><th>วัตถุประสงค์</th><th>ที่ตั้ง</th><th>มาตรการ</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Anthropic, PBC</strong></td>
+                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ (Claude API)</td>
+                <td>สหรัฐอเมริกา</td>
+                <td>มีสัญญาว่าด้วยการประมวลผลข้อมูล ประมวลผลแบบชั่วคราวเท่านั้น Anthropic ไม่นำข้อมูลส่วนบุคคลไปใช้ฝึกโมเดลภายใต้ข้อกำหนดของ commercial API</td>
+              </tr>
+              <tr>
+                <td><strong>Telegram FZ-LLC</strong></td>
+                <td>ส่งข้อความ</td>
+                <td>สหรัฐอาหรับเอมิเรตส์ / ระดับสากล</td>
+                <td>จำเป็นต่อการให้บริการ Telegram ประมวลผลข้อความตามนโยบายของบริษัทเอง ความสัมพันธ์ระหว่างท่านกับ Telegram เป็นอิสระจาก HORys</td>
+              </tr>
+              <tr>
+                <td><strong>Cloudflare, Inc.</strong></td>
+                <td>ส่งผ่านการจราจรเครือข่าย ป้องกัน DDoS</td>
+                <td>เครือข่ายระดับสากล</td>
+                <td>การทำ TLS termination เท่านั้น ไม่จัดเก็บข้อมูลส่วนบุคคลถาวร อาจประมวลผลข้อมูล metadata ของการเชื่อมต่อเพื่อความปลอดภัย</td>
+              </tr>
+              <tr>
+                <td><strong>โครงสร้างพื้นฐานที่เราดูแลเอง</strong></td>
+                <td>ระบบหลักและที่จัดเก็บข้อมูล</td>
+                <td>ประเทศไทย</td>
+                <td>เข้ารหัสข้อมูล ควบคุมและบันทึกการเข้าถึง อยู่ในความดูแลทางกายภาพของผู้ให้บริการ</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>กรณีที่ต้องอาศัยบริการภายนอกเพื่อให้บริการครบถ้วน การที่ท่านใช้บริการต่อไปถือว่าท่านรับทราบว่าการส่งข้อมูลดังกล่าวเป็นสิ่งจำเป็น</p>
+        </div>
+
+        <!-- ----- 8. Cross-Border Transfers ----- -->
+        <h2 id="p-8"><span class="num">8</span><span lang="en">Cross-Border Data Transfers</span><span lang="th">การส่งข้อมูลข้ามแดน</span></h2>
+        <div lang="en">
+          <p>Certain Data Processors are located outside the Kingdom of Thailand. Such transfers are conducted in accordance with Sections 28 and 29 of the PDPA, with appropriate safeguards including:</p>
+          <ul>
+            <li>Standard contractual data-processing agreements with each Processor;</li>
+            <li>Encryption of data in transit using TLS 1.2 or later;</li>
+            <li>Minimisation: only data strictly necessary for the stated purpose is transmitted;</li>
+            <li>Periodic review of Processor adequacy.</li>
+          </ul>
+          <p>You may request additional information regarding transfer mechanisms in writing using the contact details in Section 15.</p>
+        </div>
+        <div lang="th">
+          <p>ผู้ประมวลผลบางรายตั้งอยู่นอกราชอาณาจักรไทย การส่งข้อมูลดังกล่าวดำเนินการตามมาตรา 28 และ 29 ของ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล โดยมีมาตรการคุ้มครองที่เหมาะสม ประกอบด้วย</p>
+          <ul>
+            <li>สัญญามาตรฐานว่าด้วยการประมวลผลข้อมูลกับผู้ประมวลผลแต่ละราย</li>
+            <li>การเข้ารหัสข้อมูลขณะส่งด้วย TLS เวอร์ชัน 1.2 ขึ้นไป</li>
+            <li>หลักการประมวลผลขั้นต่ำ — ส่งเฉพาะข้อมูลที่จำเป็นต่อวัตถุประสงค์เท่านั้น</li>
+            <li>ทบทวนความเหมาะสมของผู้ประมวลผลเป็นระยะ</li>
+          </ul>
+          <p>ท่านสามารถขอข้อมูลเพิ่มเติมเกี่ยวกับกลไกการส่งข้อมูลข้ามแดนได้ตามช่องทางในข้อ 15</p>
+        </div>
+
+        <!-- ----- 9. Cookies ----- -->
+        <h2 id="p-9"><span class="num">9</span><span lang="en">Cookies and Local Storage</span><span lang="th">คุกกี้และที่เก็บข้อมูลในเบราว์เซอร์</span></h2>
+        <div lang="en">
+          <p>The Telegram bot itself does not use cookies. The only browser-side storage used by HORys is on this legal page, where your <strong>language preference</strong> (English or Thai) is saved in your browser's local storage on your device. We do not use advertising, analytics, or tracking cookies of any kind.</p>
+          <p>The transmission of messages between you and the Service is handled by Telegram and is governed by Telegram's own privacy policy.</p>
+        </div>
+        <div lang="th">
+          <p>บอท Telegram ไม่ได้ใช้คุกกี้ การจัดเก็บข้อมูลในฝั่งเบราว์เซอร์ของ HORys มีเพียงการบันทึก <strong>ตัวเลือกภาษา</strong> (ภาษาอังกฤษหรือภาษาไทย) ของหน้านโยบายฉบับนี้ ใน local storage ของอุปกรณ์ของท่านเท่านั้น เราไม่ใช้คุกกี้เพื่อโฆษณา การวิเคราะห์ หรือการติดตามใด ๆ</p>
+          <p>การรับ-ส่งข้อความระหว่างท่านกับบริการดำเนินการโดย Telegram และอยู่ภายใต้นโยบายความเป็นส่วนตัวของ Telegram โดยตรง</p>
+        </div>
+
+        <!-- ----- 10. Retention ----- -->
+        <h2 id="p-10"><span class="num">10</span><span lang="en">Data Retention</span><span lang="th">ระยะเวลาเก็บรักษาข้อมูล</span></h2>
+        <div lang="en">
+          <p>Personal Data is retained only for as long as necessary for the purposes for which it was collected, in accordance with PDPA Section 37(3).</p>
+          <table class="legal-table">
+            <thead><tr><th>Data Category</th><th>Retention Period</th><th>Basis</th></tr></thead>
+            <tbody>
+              <tr><td>Bot interaction logs</td><td>Up to 90 days, then aggregated or deleted</td><td>Service quality, debugging, abuse prevention</td></tr>
+              <tr><td>Computed astrological outputs (transient)</td><td>Until delivered; not retained after delivery</td><td>Performance of contract</td></tr>
+              <tr><td>User-saved profiles and bookmarks</td><td>Until you withdraw consent or 12 consecutive months of inactivity</td><td>Consent</td></tr>
+              <tr><td>Token usage analytics (aggregate)</td><td>Up to 24 months</td><td>Cost monitoring; not personally identifying</td></tr>
+              <tr><td>Access logs (records of who within HORys accessed your data)</td><td>12 months</td><td>Security and accountability</td></tr>
+            </tbody>
+          </table>
+          <p>Upon expiry of the retention period or upon a valid erasure request, Personal Data is deleted or irreversibly anonymised.</p>
+        </div>
+        <div lang="th">
+          <p>เราจัดเก็บข้อมูลส่วนบุคคลเท่าที่จำเป็นต่อวัตถุประสงค์เท่านั้น ตามมาตรา 37(3) ของ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล</p>
+          <table class="legal-table">
+            <thead><tr><th>ประเภทข้อมูล</th><th>ระยะเวลาเก็บ</th><th>เหตุผล</th></tr></thead>
+            <tbody>
+              <tr><td>บันทึกการใช้งานบอท</td><td>ไม่เกิน 90 วัน แล้วจึงรวมเป็นสถิติหรือลบ</td><td>การรับประกันคุณภาพ การตรวจสอบ ป้องกันการใช้งานในทางที่ผิด</td></tr>
+              <tr><td>ผลคำนวณทางโหราศาสตร์ (ชั่วคราว)</td><td>ส่งให้ผู้ใช้แล้วไม่จัดเก็บต่อ</td><td>การปฏิบัติตามสัญญา</td></tr>
+              <tr><td>ดวงและบันทึกที่ผู้ใช้บันทึก</td><td>จนกว่าจะเพิกถอนความยินยอม หรือไม่มีการใช้งานติดต่อกัน 12 เดือน</td><td>ความยินยอม</td></tr>
+              <tr><td>สถิติการใช้ token (รวมยอด)</td><td>ไม่เกิน 24 เดือน</td><td>ควบคุมต้นทุน — ไม่ระบุตัวบุคคล</td></tr>
+              <tr><td>บันทึกการเข้าถึง (ใครภายใน HORys เข้าถึงข้อมูลของท่าน)</td><td>12 เดือน</td><td>ความปลอดภัยและการตรวจสอบความรับผิดชอบ</td></tr>
+            </tbody>
+          </table>
+          <p>เมื่อพ้นระยะเวลาเก็บ หรือเมื่อมีคำขอลบโดยชอบ เราจะลบหรือทำให้ข้อมูลไม่สามารถระบุตัวบุคคลได้อย่างถาวร</p>
+        </div>
+
+        <!-- ----- 11. Security ----- -->
+        <h2 id="p-11"><span class="num">11</span><span lang="en">Security Measures</span><span lang="th">มาตรการรักษาความปลอดภัย</span></h2>
+        <div lang="en">
+          <p>We implement organisational, technical, and physical safeguards proportionate to the risk, including:</p>
+          <ul>
+            <li><strong>Encryption at rest</strong>: Personal Data stored on our servers — including any saved birth profiles — is encrypted using Fernet symmetric encryption (AES-128-CBC with HMAC-SHA256 authentication);</li>
+            <li><strong>Encryption in transit</strong>: all communication between Telegram and our servers is conducted over TLS 1.2 or later;</li>
+            <li><strong>Data minimisation</strong>: we collect and process only Personal Data necessary to deliver the requested computation;</li>
+            <li><strong>Access control</strong>: only authorised personnel of the Operator may access systems handling Personal Data, on a need-to-know basis;</li>
+            <li><strong>Network</strong>: application servers are not directly exposed to the public internet; rate limiting protects against abuse;</li>
+            <li><strong>Access logging</strong>: all internal access to systems handling Personal Data is logged with actor, action, timestamp, and outcome.</li>
+          </ul>
+          <p>Despite these safeguards, no system is impregnable. Should a security incident occur that is likely to result in a high risk to your rights, we will notify you and the PDPC in line with PDPA Section 37(4).</p>
+        </div>
+        <div lang="th">
+          <p>เรามีมาตรการคุ้มครองความปลอดภัยทั้งด้านองค์กร ด้านเทคนิค และด้านกายภาพตามระดับความเสี่ยง ดังนี้</p>
+          <ul>
+            <li><strong>การเข้ารหัสข้อมูลขณะจัดเก็บ</strong>: ข้อมูลส่วนบุคคลที่จัดเก็บบนเซิร์ฟเวอร์ของเรา รวมถึงโปรไฟล์ดวงที่บันทึกไว้ จะถูกเข้ารหัสด้วย Fernet (AES-128-CBC พร้อม HMAC-SHA256)</li>
+            <li><strong>การเข้ารหัสข้อมูลขณะส่ง</strong>: การสื่อสารระหว่าง Telegram และเซิร์ฟเวอร์ของเราใช้ TLS เวอร์ชัน 1.2 ขึ้นไป</li>
+            <li><strong>หลักประมวลผลขั้นต่ำ</strong>: เราเก็บและประมวลผลเฉพาะข้อมูลที่จำเป็นต่อการคำนวณตามคำขอเท่านั้น</li>
+            <li><strong>การควบคุมการเข้าถึง</strong>: เฉพาะบุคลากรที่ได้รับมอบหมายของผู้ให้บริการเท่านั้นที่สามารถเข้าถึงระบบที่เกี่ยวกับข้อมูลส่วนบุคคล โดยเข้าถึงได้เท่าที่จำเป็น</li>
+            <li><strong>เครือข่าย</strong>: เซิร์ฟเวอร์แอปพลิเคชันไม่เปิดสู่อินเทอร์เน็ตสาธารณะโดยตรง มีการจำกัดอัตราเรียกใช้เพื่อป้องกันการใช้งานในทางที่ผิด</li>
+            <li><strong>บันทึกการเข้าถึง</strong>: การเข้าถึงระบบที่เกี่ยวกับข้อมูลส่วนบุคคลภายในองค์กรทั้งหมดถูกบันทึกพร้อมผู้กระทำ การกระทำ เวลา และผล</li>
+          </ul>
+          <p>แม้มีมาตรการดังกล่าว ไม่มีระบบใดปลอดภัยอย่างสมบูรณ์ หากเกิดเหตุการณ์ละเมิดที่อาจกระทบสิทธิของท่านในระดับสูง เราจะแจ้งท่านและ กคส. ตามมาตรา 37(4) ของ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล</p>
+        </div>
+
+        <!-- ----- 12. Rights ----- -->
+        <h2 id="p-12"><span class="num">12</span><span lang="en">Your Rights as a Data Subject</span><span lang="th">สิทธิของเจ้าของข้อมูลส่วนบุคคล</span></h2>
+        <div lang="en">
+          <p>Under the PDPA, you have the following rights, subject to lawful exceptions:</p>
+          <ul>
+            <li><strong>Right of access</strong> (Section 30) — to obtain confirmation of processing and a copy of your Personal Data;</li>
+            <li><strong>Right to rectification</strong> (Section 31) — to correct inaccurate or incomplete data;</li>
+            <li><strong>Right to erasure</strong> (Section 32) — to request deletion, where no overriding legal obligation applies;</li>
+            <li><strong>Right to data portability</strong> (Section 33) — to receive your data in a machine-readable format;</li>
+            <li><strong>Right to object</strong> (Section 34) — to certain processing activities, including direct marketing;</li>
+            <li><strong>Right to restrict processing</strong> (Section 35) — under certain circumstances;</li>
+            <li><strong>Right to withdraw consent</strong> (Section 19, paragraph 5) — at any time, without retroactive effect on processing already lawfully conducted;</li>
+            <li><strong>Right to lodge a complaint</strong> with the PDPC at <strong>https://www.pdpc.or.th</strong>.</li>
+          </ul>
+          <p>To exercise any of these rights, please contact us using the details in Section 15. We will respond within 30 days of receipt of a verifiable request, in accordance with PDPA Section 39. We may request reasonable verification of your identity before fulfilling a request.</p>
+        </div>
+        <div lang="th">
+          <p>ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล ท่านมีสิทธิดังต่อไปนี้ ภายใต้ข้อยกเว้นตามกฎหมาย</p>
+          <ul>
+            <li><strong>สิทธิในการเข้าถึง</strong> (มาตรา 30) — ขอยืนยันการประมวลผลและขอสำเนาข้อมูลของท่าน</li>
+            <li><strong>สิทธิในการแก้ไข</strong> (มาตรา 31) — ขอแก้ไขข้อมูลที่ไม่ถูกต้องหรือไม่ครบถ้วน</li>
+            <li><strong>สิทธิในการลบหรือทำลาย</strong> (มาตรา 32) — ขอลบข้อมูลในกรณีที่ไม่มีหน้าที่ทางกฎหมายที่เหนือกว่า</li>
+            <li><strong>สิทธิในการโอนย้ายข้อมูล</strong> (มาตรา 33) — ขอรับข้อมูลในรูปแบบที่อ่านได้ด้วยเครื่อง</li>
+            <li><strong>สิทธิในการคัดค้าน</strong> (มาตรา 34) — คัดค้านการประมวลผลบางประเภท รวมถึงการตลาดทางตรง</li>
+            <li><strong>สิทธิในการระงับการใช้</strong> (มาตรา 35) — ในกรณีที่กฎหมายกำหนด</li>
+            <li><strong>สิทธิในการเพิกถอนความยินยอม</strong> (มาตรา 19 วรรคห้า) — เพิกถอนได้ทุกเมื่อ ไม่กระทบต่อการประมวลผลที่กระทำโดยชอบไปก่อนหน้า</li>
+            <li><strong>สิทธิในการร้องเรียน</strong> ต่อ กคส. ที่ <strong>https://www.pdpc.or.th</strong></li>
+          </ul>
+          <p>หากต้องการใช้สิทธิดังกล่าว กรุณาติดต่อตามช่องทางในข้อ 15 เราจะตอบกลับภายใน 30 วันนับจากได้รับคำขอที่สามารถตรวจสอบได้ ตามมาตรา 39 ของ พ.ร.บ. ดังกล่าว เราอาจขอหลักฐานยืนยันตัวตนตามสมควรก่อนดำเนินการ</p>
+        </div>
+
+        <!-- ----- 13. Minors ----- -->
+        <h2 id="p-13"><span class="num">13</span><span lang="en">Minors</span><span lang="th">ผู้เยาว์</span></h2>
+        <div lang="en">
+          <p>The Service is intended for persons aged twenty (20) years or older, the age of majority under Thai civil law. We do not knowingly collect Personal Data from minors. Where Personal Data of a minor is processed (for example, when a parent or guardian consults the Service for their child's birth chart), the requesting adult is responsible for ensuring proper authority and consent. Should we become aware that a minor has provided Personal Data without lawful authority, we will delete it without undue delay.</p>
+        </div>
+        <div lang="th">
+          <p>บริการนี้มีเป้าหมายผู้ใช้อายุ 20 ปีขึ้นไป (อายุบรรลุนิติภาวะตามประมวลกฎหมายแพ่งและพาณิชย์) เราไม่เก็บรวบรวมข้อมูลส่วนบุคคลของผู้เยาว์โดยรู้ตัว กรณีที่มีการประมวลผลข้อมูลของผู้เยาว์ (เช่น บิดามารดาหรือผู้ปกครองขอดูดวงแทนบุตร) ผู้ใหญ่ผู้ส่งคำขอเป็นผู้รับผิดชอบในการดำเนินการให้ถูกต้องตามอำนาจปกครองและขอความยินยอม หากเราทราบว่าผู้เยาว์ให้ข้อมูลโดยปราศจากอำนาจโดยชอบ เราจะลบข้อมูลโดยไม่ชักช้า</p>
+        </div>
+
+        <!-- ----- 14. Changes ----- -->
+        <h2 id="p-14"><span class="num">14</span><span lang="en">Changes to this Policy</span><span lang="th">การแก้ไขนโยบายฉบับนี้</span></h2>
+        <div lang="en">
+          <p>We may update this Policy from time to time to reflect operational, legal, or regulatory changes. The Effective Date and Version will be revised accordingly. Material changes will be notified via the Service prior to taking effect, where reasonably practicable.</p>
+        </div>
+        <div lang="th">
+          <p>เราอาจปรับปรุงนโยบายฉบับนี้เป็นครั้งคราวเพื่อให้สอดคล้องกับการดำเนินงาน กฎหมาย หรือข้อกำหนดของหน่วยงานกำกับ โดยจะปรับ “วันที่มีผลบังคับ” และ “เวอร์ชัน” ตามนั้น กรณีมีการเปลี่ยนแปลงในสาระสำคัญ เราจะแจ้งให้ท่านทราบผ่านบริการก่อนการมีผลบังคับ เท่าที่สามารถทำได้</p>
+        </div>
+
+        <!-- ----- 15. Contact ----- -->
+        <h2 id="p-15"><span class="num">15</span><span lang="en">Contact</span><span lang="th">ติดต่อเรา</span></h2>
+        <div lang="en">
+          <p><strong>Data Controller</strong>: <strong>HORys</strong><br>
+          <strong>Email</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+        </div>
+        <div lang="th">
+          <p><strong>ผู้ควบคุมข้อมูลส่วนบุคคล</strong>: <strong>HORys</strong><br>
+          <strong>อีเมล</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+        </div>
+
+      </section>
+
+
+      <!-- ================================================================
+           TERMS OF SERVICE
+           ================================================================ -->
+      <section class="doc-section" data-section="terms">
+
+        <h2 id="t-1"><span class="num">1</span><span lang="en">Acceptance of Terms</span><span lang="th">การยอมรับข้อกำหนด</span></h2>
+        <div lang="en">
+          <p>These Terms of Service (the <span class="term">"Terms"</span>) constitute a legally binding agreement between you (the <span class="term">"User"</span>) and <strong>HORys</strong> (the <span class="term">"Operator"</span>) governing access to and use of the HORys Telegram bot service (<strong>@HORysBot</strong>) (the <span class="term">"Service"</span>).</p>
+          <p>By accessing or using the Service, you confirm that you have read, understood, and agreed to be bound by these Terms and by the Privacy Policy referenced in this document. If you do not agree to any provision, you must immediately discontinue use of the Service.</p>
+        </div>
+        <div lang="th">
+          <p>ข้อกำหนดการใช้บริการฉบับนี้ (<span class="term">“ข้อกำหนด”</span>) เป็นความตกลงที่มีผลผูกพันทางกฎหมายระหว่างท่าน (<span class="term">“ผู้ใช้บริการ”</span>) และ <strong>HORys</strong> (<span class="term">“ผู้ให้บริการ”</span>) ในการเข้าถึงและใช้บริการบอท HORys (<strong>@HORysBot</strong>) บน Telegram (<span class="term">“บริการ”</span>)</p>
+          <p>การเข้าถึงหรือใช้บริการ ถือว่าท่านได้อ่าน เข้าใจ และตกลงผูกพันตามข้อกำหนดฉบับนี้ รวมถึงนโยบายความเป็นส่วนตัวที่อ้างถึง หากท่านไม่ตกลงในข้อใด ท่านจะต้องยุติการใช้บริการในทันที</p>
+        </div>
+
+        <h2 id="t-2"><span class="num">2</span><span lang="en">Definitions</span><span lang="th">คำนิยาม</span></h2>
+        <div lang="en">
+          <p>Capitalised terms used but not otherwise defined herein shall have the meanings ascribed to them in the Privacy Policy.</p>
+        </div>
+        <div lang="th">
+          <p>คำที่ขึ้นต้นด้วยตัวอักษรพิมพ์ใหญ่หรือคำเฉพาะที่ไม่ได้นิยามไว้ในข้อกำหนดฉบับนี้ ให้มีความหมายตามที่กำหนดในนโยบายความเป็นส่วนตัว</p>
+        </div>
+
+        <h2 id="t-3"><span class="num">3</span><span lang="en">Description of Service</span><span lang="th">รายละเอียดของบริการ</span></h2>
+        <div lang="en">
+          <p>HORys is a Telegram-based service combining deterministic ephemeris computation with AI-generated narrative content sourced from Anthropic's Claude API. Functions provided include:</p>
+          <ul>
+            <li>Birth chart computation and interpretation;</li>
+            <li>Auspicious time selection (muhurta);</li>
+            <li>Compatibility analysis between charts;</li>
+            <li>Numerology, lucky number, and personal-name analysis;</li>
+            <li>Predictive narrative readings (informational only);</li>
+            <li>Lottery-number suggestion features (recreational, see Section 8).</li>
+          </ul>
+          <p>Specific features may be added, modified, or withdrawn at our discretion. Continued availability of any individual feature is not guaranteed.</p>
+        </div>
+        <div lang="th">
+          <p>HORys คือบริการบนแพลตฟอร์ม Telegram ที่ผสานการคำนวณตำแหน่งดาวเชิงคณิตศาสตร์ (ephemeris) เข้ากับเนื้อหาคำพยากรณ์ที่สร้างโดย AI ผ่าน Claude API ของ Anthropic ฟังก์ชันที่ให้บริการรวมถึง</p>
+          <ul>
+            <li>การผูกดวงและตีความดวงชะตา</li>
+            <li>การหาฤกษ์มงคล (muhurta)</li>
+            <li>การวิเคราะห์ความเข้ากันได้ของดวงสองดวง</li>
+            <li>เลขศาสตร์ เลขมงคล และการตั้งชื่อ</li>
+            <li>คำพยากรณ์เชิงข้อความ (เพื่อเป็นข้อมูลเท่านั้น)</li>
+            <li>คำแนะนำเกี่ยวกับเลขหวย (เพื่อความบันเทิง โปรดดูข้อ 8)</li>
+          </ul>
+          <p>ผู้ให้บริการอาจเพิ่ม แก้ไข หรือยุติฟีเจอร์ใดๆ ได้ตามดุลพินิจ และไม่รับประกันการให้บริการอย่างต่อเนื่องของฟีเจอร์ใดฟีเจอร์หนึ่งโดยเฉพาะ</p>
+        </div>
+
+        <h2 id="t-4"><span class="num">4</span><span lang="en">Eligibility</span><span lang="th">คุณสมบัติของผู้ใช้บริการ</span></h2>
+        <div lang="en">
+          <p>You must be at least twenty (20) years of age (the age of majority under Thai law) to use the Service. By using the Service, you represent and warrant that you meet this requirement and that you have full legal capacity to enter into these Terms.</p>
+        </div>
+        <div lang="th">
+          <p>ผู้ใช้บริการต้องมีอายุไม่ต่ำกว่า 20 ปี (อายุบรรลุนิติภาวะตามกฎหมายไทย) การใช้บริการเป็นการรับรองและยืนยันว่าท่านมีคุณสมบัติดังกล่าว และมีความสามารถตามกฎหมายในการเข้าทำความตกลงนี้</p>
+        </div>
+
+        <h2 id="t-5"><span class="num">5</span><span lang="en">Account and Access</span><span lang="th">บัญชีผู้ใช้และการเข้าถึงระบบ</span></h2>
+        <div lang="en">
+          <p>Use of the Service does not require a separate account beyond your existing Telegram account. You are responsible for the security of your Telegram account and for all activities conducted through it in connection with the Service. Your relationship with Telegram itself is governed by Telegram's own terms.</p>
+        </div>
+        <div lang="th">
+          <p>การใช้บริการไม่ต้องสมัครบัญชีเพิ่มเติมนอกจากบัญชี Telegram ของท่าน ท่านมีหน้าที่รับผิดชอบความปลอดภัยของบัญชี Telegram และการดำเนินการทั้งหมดที่เกี่ยวกับบริการผ่านบัญชีดังกล่าว ความสัมพันธ์ระหว่างท่านกับ Telegram อยู่ภายใต้ข้อกำหนดของ Telegram โดยตรง</p>
+        </div>
+
+        <h2 id="t-6"><span class="num">6</span><span lang="en">User Obligations</span><span lang="th">หน้าที่ของผู้ใช้บริการ</span></h2>
+        <div lang="en">
+          <p>You agree to:</p>
+          <ul>
+            <li>Provide accurate information where input is required for computation;</li>
+            <li>Use the Service only for lawful, personal, and non-commercial purposes;</li>
+            <li>Not interfere with, disrupt, or attempt to circumvent the security or rate limits of the Service;</li>
+            <li>Not reverse-engineer, scrape, or extract Service outputs at scale;</li>
+            <li>Comply with applicable laws of the Kingdom of Thailand and any other jurisdiction relevant to your use.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <p>ท่านตกลงปฏิบัติตามต่อไปนี้</p>
+          <ul>
+            <li>ให้ข้อมูลที่ถูกต้องเมื่อระบบขอข้อมูลเพื่อการคำนวณ</li>
+            <li>ใช้บริการเพื่อวัตถุประสงค์ที่ชอบด้วยกฎหมาย เป็นการส่วนตัว และไม่ใช่เชิงพาณิชย์</li>
+            <li>ไม่กระทำการขัดขวาง รบกวน หรือพยายามหลบเลี่ยงระบบความปลอดภัยหรือข้อจำกัดอัตราการใช้</li>
+            <li>ไม่ทำวิศวกรรมย้อนกลับ ดึงข้อมูล หรือเก็บผลลัพธ์ของบริการในปริมาณมาก</li>
+            <li>ปฏิบัติตามกฎหมายแห่งราชอาณาจักรไทย และกฎหมายของเขตอำนาจอื่นที่เกี่ยวข้องกับการใช้งานของท่าน</li>
+          </ul>
+        </div>
+
+        <h2 id="t-7"><span class="num">7</span><span lang="en">Prohibited Uses</span><span lang="th">การใช้งานที่ต้องห้าม</span></h2>
+        <div lang="en">
+          <p>You shall not use the Service:</p>
+          <ul>
+            <li>For any unlawful, fraudulent, or harmful purpose;</li>
+            <li>To send malicious code, spam, or content that may impair the Service or other users;</li>
+            <li>To resell, sublicense, or commercialise Service outputs without prior written authorisation;</li>
+            <li>To make consequential decisions on health, finance, investment, legal matters, or personal safety;</li>
+            <li>To infringe the intellectual-property rights or privacy of any third party;</li>
+            <li>To gather, harvest, or compile data on other users.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <p>ห้ามใช้บริการในกรณีต่อไปนี้</p>
+          <ul>
+            <li>เพื่อวัตถุประสงค์ที่ผิดกฎหมาย ฉ้อโกง หรือเป็นอันตราย</li>
+            <li>ส่งโค้ดที่เป็นอันตราย ข้อความรบกวน หรือเนื้อหาที่อาจทำลายบริการหรือผู้ใช้รายอื่น</li>
+            <li>ขายต่อ มอบสิทธิ์ใช้งาน หรือนำผลลัพธ์ของบริการไปใช้เชิงพาณิชย์ โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษร</li>
+            <li>นำผลลัพธ์ไปใช้ตัดสินใจที่มีนัยสำคัญเกี่ยวกับสุขภาพ การเงิน การลงทุน เรื่องทางกฎหมาย หรือความปลอดภัยของบุคคล</li>
+            <li>ละเมิดทรัพย์สินทางปัญญาหรือความเป็นส่วนตัวของบุคคลที่สาม</li>
+            <li>เก็บรวบรวม ดึงข้อมูล หรือทำสารบัญข้อมูลของผู้ใช้รายอื่น</li>
+          </ul>
+        </div>
+
+        <h2 id="t-8"><span class="num">8</span><span lang="en">AI-Generated Content &amp; No Professional Advice</span><span lang="th">ข้อจำกัดของผลลัพธ์ AI และข้อสงวนเรื่องคำแนะนำวิชาชีพ</span></h2>
+        <div lang="en">
+          <div class="legal-callout">
+            <div class="label">Material Disclaimer</div>
+            <p>The Service produces outputs through algorithmic computation and large-language-model inference. Such outputs are provided <strong>for entertainment and self-reflection purposes only</strong>.</p>
+          </div>
+          <ul>
+            <li>Service outputs <strong>do not constitute</strong> medical, psychological, legal, financial, investment, tax, or other professional advice.</li>
+            <li>Lottery-number suggestions and predictive readings are recreational. <strong>No outcome is guaranteed.</strong> Past results bear no predictive value.</li>
+            <li>Astrological interpretations reflect symbolic and traditional frameworks; they are not scientifically validated forecasts.</li>
+            <li>Users should consult appropriately qualified and licensed professionals for any decision with material legal, financial, health, or safety implications.</li>
+            <li>The Operator disclaims all responsibility for decisions or actions taken by Users in reliance on Service outputs.</li>
+          </ul>
+        </div>
+        <div lang="th">
+          <div class="legal-callout">
+            <div class="label">ข้อสงวนสิทธิ์สำคัญ</div>
+            <p>ผลลัพธ์จากบริการเกิดจากการคำนวณเชิงอัลกอริทึมและการประมวลผลของโมเดลภาษาขนาดใหญ่ ผลลัพธ์ดังกล่าวจัดให้ <strong>เพื่อความบันเทิงและการสะท้อนตนเองเท่านั้น</strong></p>
+          </div>
+          <ul>
+            <li>ผลลัพธ์ของบริการ <strong>ไม่ถือเป็น</strong> คำแนะนำทางการแพทย์ จิตวิทยา กฎหมาย การเงิน การลงทุน ภาษี หรือคำแนะนำวิชาชีพอื่น</li>
+            <li>คำแนะนำเรื่องเลขหวยและคำพยากรณ์เป็นไปเพื่อความบันเทิง <strong>ไม่มีการรับประกันผลลัพธ์</strong> และผลในอดีตไม่มีค่าทำนายผลในอนาคต</li>
+            <li>การตีความทางโหราศาสตร์เป็นการอ้างอิงกรอบความคิดเชิงสัญลักษณ์และประเพณี ไม่ใช่การพยากรณ์ที่ผ่านการพิสูจน์ทางวิทยาศาสตร์</li>
+            <li>ผู้ใช้ควรปรึกษาผู้ประกอบวิชาชีพที่มีคุณสมบัติและได้รับใบอนุญาต ก่อนตัดสินใจในเรื่องที่มีผลกระทบทางกฎหมาย การเงิน สุขภาพ หรือความปลอดภัย</li>
+            <li>ผู้ให้บริการขอปฏิเสธความรับผิดทุกประการสำหรับการตัดสินใจหรือการกระทำของผู้ใช้ที่เกิดขึ้นจากการอาศัยผลลัพธ์ของบริการ</li>
+          </ul>
+        </div>
+
+        <h2 id="t-9"><span class="num">9</span><span lang="en">Intellectual Property</span><span lang="th">ทรัพย์สินทางปัญญา</span></h2>
+        <div lang="en">
+          <p>The Service, including its underlying source code, design, brand identity, copy, and the structure and selection of computational outputs, is the intellectual property of the Operator or its licensors. No right or licence is granted by these Terms other than the limited, revocable, non-exclusive right to use the Service in accordance with the Terms. Brand names, logos, and trademarks of third parties (including Telegram and Anthropic) remain the property of their respective owners.</p>
+        </div>
+        <div lang="th">
+          <p>บริการรวมถึงซอร์สโค้ด การออกแบบ อัตลักษณ์แบรนด์ เนื้อหา และการคัดเลือก/จัดเรียงผลลัพธ์ เป็นทรัพย์สินทางปัญญาของผู้ให้บริการหรือผู้ให้สิทธิ์ ข้อกำหนดฉบับนี้ไม่ได้มอบสิทธิ์หรือใบอนุญาตใดนอกจากสิทธิ์จำกัด เพิกถอนได้ และไม่จำกัดเฉพาะรายในการใช้บริการตามข้อกำหนด ชื่อ โลโก้ และเครื่องหมายการค้าของบุคคลที่สาม (รวมถึง Telegram และ Anthropic) ยังคงเป็นทรัพย์สินของเจ้าของตามลำดับ</p>
+        </div>
+
+        <h2 id="t-10"><span class="num">10</span><span lang="en">Service Availability</span><span lang="th">การให้บริการและความพร้อมของระบบ</span></h2>
+        <div lang="en">
+          <p>The Service is provided on an <span class="term">"as is"</span> and <span class="term">"as available"</span> basis. We do not guarantee uninterrupted operation. Maintenance, technical failure, or disruption of third-party dependencies (including Telegram, Anthropic, or network providers) may cause temporary unavailability. No service-level agreement (SLA) is offered for non-commercial use.</p>
+        </div>
+        <div lang="th">
+          <p>บริการเปิดให้ใช้ตามสภาพ <span class="term">“as is”</span> และ <span class="term">“as available”</span> เราไม่รับประกันการทำงานต่อเนื่องโดยไม่ขาดตอน การบำรุงรักษา ข้อขัดข้องทางเทคนิค หรือเหตุขัดข้องของผู้ให้บริการที่เกี่ยวข้อง (รวมถึง Telegram, Anthropic หรือผู้ให้บริการเครือข่าย) อาจทำให้บริการไม่พร้อมใช้งานชั่วคราว ผู้ให้บริการไม่จัดทำข้อตกลงระดับการบริการ (SLA) สำหรับการใช้งานที่ไม่ใช่เชิงพาณิชย์</p>
+        </div>
+
+        <h2 id="t-11"><span class="num">11</span><span lang="en">Disclaimers</span><span lang="th">ข้อสงวนสิทธิ์</span></h2>
+        <div lang="en">
+          <div class="legal-disclaimer">
+            <p>To the maximum extent permitted by Thai law, the service is provided without warranties of any kind, whether express or implied, including without limitation warranties of merchantability, fitness for a particular purpose, accuracy, non-infringement, and uninterrupted or error-free operation. The operator does not warrant that any information generated by AI is accurate, complete, current, or fit for any purpose.</p>
+          </div>
+        </div>
+        <div lang="th">
+          <div class="legal-disclaimer">
+            <p>ภายใต้ขอบเขตสูงสุดที่กฎหมายไทยอนุญาต บริการนี้ให้โดยไม่มีการรับประกันใด ๆ ทั้งที่ระบุไว้โดยชัดแจ้งและที่อนุมานได้ รวมถึงแต่ไม่จำกัดเฉพาะการรับประกันด้านการค้าได้ ความเหมาะสมเพื่อวัตถุประสงค์เฉพาะ ความถูกต้อง การไม่ละเมิดสิทธิ์ และการทำงานต่อเนื่องโดยไม่ผิดพลาด ผู้ให้บริการไม่รับประกันว่าข้อมูลใด ๆ ที่สร้างโดย AI มีความถูกต้อง ครบถ้วน เป็นปัจจุบัน หรือเหมาะสมกับวัตถุประสงค์ใด</p>
+          </div>
+        </div>
+
+        <h2 id="t-12"><span class="num">12</span><span lang="en">Limitation of Liability</span><span lang="th">ข้อจำกัดความรับผิด</span></h2>
+        <div lang="en">
+          <div class="legal-disclaimer">
+            <p>To the maximum extent permitted by Thai law, in no event shall the operator, its affiliates, directors, employees, agents, or processors be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of profits, revenue, data, goodwill, or anticipated savings, arising out of or in connection with use of, or inability to use, the service, whether based on contract, tort (including negligence), strict liability, or otherwise, even if advised of the possibility of such damages. The aggregate liability of the operator under any theory shall not exceed one thousand thai baht (THB 1,000) or the total fees you have paid to the operator for use of the service in the twelve months preceding the claim, whichever is greater.</p>
+          </div>
+          <p>Nothing in this Section limits liability that cannot be excluded under applicable Thai law (including liability for wilful misconduct or gross negligence).</p>
+        </div>
+        <div lang="th">
+          <div class="legal-disclaimer">
+            <p>ภายใต้ขอบเขตสูงสุดที่กฎหมายไทยอนุญาต ไม่ว่ากรณีใด ผู้ให้บริการ บริษัทในเครือ กรรมการ พนักงาน ตัวแทน หรือผู้ประมวลผล จะไม่รับผิดชอบต่อความเสียหายโดยอ้อม ความเสียหายโดยบังเอิญ ความเสียหายพิเศษ ความเสียหายต่อเนื่อง ความเสียหายเพื่อเป็นเยี่ยงอย่าง หรือค่าเสียหายเชิงลงโทษ หรือต่อการสูญเสียกำไร รายได้ ข้อมูล ชื่อเสียง หรือเงินออมที่คาดว่าจะได้รับ อันเกิดจากหรือเกี่ยวเนื่องกับการใช้หรือไม่สามารถใช้บริการ ไม่ว่าจะอ้างอิงสัญญา ละเมิด (รวมถึงความประมาท) ความรับผิดเด็ดขาด หรือมูลฐานอื่น แม้ว่าจะได้รับแจ้งถึงความเป็นไปได้ของความเสียหายดังกล่าว ความรับผิดรวมของผู้ให้บริการภายใต้มูลฐานใดก็ตาม จะไม่เกิน 1,000 บาท หรือค่าธรรมเนียมรวมที่ท่านชำระให้ผู้ให้บริการในช่วง 12 เดือนก่อนเกิดข้อเรียกร้อง แล้วแต่จำนวนใดสูงกว่า</p>
+          </div>
+          <p>ข้อใดในข้อนี้จะไม่จำกัดความรับผิดที่ไม่สามารถยกเว้นได้ตามกฎหมายไทย (รวมถึงความรับผิดที่เกิดจากการจงใจหรือประมาทเลินเล่ออย่างร้ายแรง)</p>
+        </div>
+
+        <h2 id="t-13"><span class="num">13</span><span lang="en">Indemnification</span><span lang="th">การชดใช้ค่าเสียหาย</span></h2>
+        <div lang="en">
+          <p>You agree to indemnify, defend, and hold harmless the Operator and its Processors from and against any claims, damages, losses, liabilities, and expenses (including reasonable legal fees) arising from (a) your breach of these Terms; (b) your misuse of the Service; or (c) your violation of any applicable law or third-party right.</p>
+        </div>
+        <div lang="th">
+          <p>ท่านตกลงชดใช้ ปกป้อง และทำให้ผู้ให้บริการและผู้ประมวลผลปลอดจากข้อเรียกร้อง ค่าเสียหาย การสูญเสีย ความรับผิด และค่าใช้จ่าย (รวมถึงค่าทนายความตามสมควร) ที่เกิดจาก (ก) การที่ท่านผิดข้อกำหนดฉบับนี้ (ข) การใช้บริการในทางที่ผิด หรือ (ค) การที่ท่านฝ่าฝืนกฎหมายหรือสิทธิของบุคคลที่สาม</p>
+        </div>
+
+        <h2 id="t-14"><span class="num">14</span><span lang="en">Termination</span><span lang="th">การยุติการให้บริการ</span></h2>
+        <div lang="en">
+          <p>The Operator reserves the right to suspend or terminate access to the Service, in whole or in part, at any time, with or without notice, where: (a) you breach these Terms; (b) such action is required by law or competent authority; or (c) the Operator discontinues the Service. Sections 7 (Prohibited Uses), 8 (AI Disclaimer), 11 (Disclaimers), 12 (Limitation of Liability), 13 (Indemnification), 15 (Governing Law), and 16 (Disputes) shall survive termination.</p>
+        </div>
+        <div lang="th">
+          <p>ผู้ให้บริการสงวนสิทธิ์ในการระงับหรือยุติการเข้าถึงบริการ ไม่ว่าทั้งหมดหรือบางส่วน ณ เวลาใด โดยมีหรือไม่มีการแจ้งให้ทราบล่วงหน้า ในกรณี (ก) ท่านฝ่าฝืนข้อกำหนดฉบับนี้ (ข) การยุติเป็นไปตามกฎหมายหรือคำสั่งของหน่วยงานที่มีอำนาจ หรือ (ค) ผู้ให้บริการยุติการให้บริการ ทั้งนี้ ข้อ 7 (การใช้งานที่ต้องห้าม) ข้อ 8 (ข้อจำกัด AI) ข้อ 11 (ข้อสงวนสิทธิ์) ข้อ 12 (ข้อจำกัดความรับผิด) ข้อ 13 (การชดใช้ค่าเสียหาย) ข้อ 15 (กฎหมายที่บังคับใช้) และข้อ 16 (การระงับข้อพิพาท) มีผลต่อเนื่องแม้สัญญาสิ้นสุด</p>
+        </div>
+
+        <h2 id="t-15"><span class="num">15</span><span lang="en">Governing Law</span><span lang="th">กฎหมายที่ใช้บังคับ</span></h2>
+        <div lang="en">
+          <p>These Terms are governed by, and construed in accordance with, the laws of the Kingdom of Thailand, without regard to its conflict-of-laws principles.</p>
+        </div>
+        <div lang="th">
+          <p>ข้อกำหนดฉบับนี้ใช้บังคับและตีความตามกฎหมายแห่งราชอาณาจักรไทย โดยไม่นำหลักการขัดกันของกฎหมายมาใช้</p>
+        </div>
+
+        <h2 id="t-16"><span class="num">16</span><span lang="en">Dispute Resolution</span><span lang="th">การระงับข้อพิพาท</span></h2>
+        <div lang="en">
+          <p>The parties shall first endeavour to resolve any dispute arising out of or in connection with these Terms through good-faith negotiation. Disputes that cannot be resolved through negotiation within sixty (60) days shall be submitted to the exclusive jurisdiction of the courts of Bangkok, Thailand. Nothing in this Section shall prevent either party from seeking interim relief in any court of competent jurisdiction.</p>
+        </div>
+        <div lang="th">
+          <p>คู่สัญญาจะพยายามระงับข้อพิพาทที่เกิดจากหรือเกี่ยวเนื่องกับข้อกำหนดฉบับนี้ด้วยการเจรจาโดยสุจริตเป็นลำดับแรก หากไม่สามารถระงับได้ภายใน 60 วัน ให้ข้อพิพาทอยู่ในอำนาจพิจารณาของศาลในกรุงเทพมหานคร ราชอาณาจักรไทย ทั้งนี้ ข้อใดในข้อนี้จะไม่ห้ามคู่สัญญาฝ่ายใดในการขอใช้มาตรการชั่วคราวจากศาลที่มีอำนาจ</p>
+        </div>
+
+        <h2 id="t-17"><span class="num">17</span><span lang="en">Changes to Terms</span><span lang="th">การแก้ไขข้อกำหนด</span></h2>
+        <div lang="en">
+          <p>The Operator may modify these Terms from time to time. Where modifications are material, reasonable advance notice will be provided through the Service prior to the effective date. Continued use after the effective date constitutes acceptance of the revised Terms.</p>
+        </div>
+        <div lang="th">
+          <p>ผู้ให้บริการอาจแก้ไขข้อกำหนดฉบับนี้เป็นครั้งคราว กรณีการแก้ไขเป็นสาระสำคัญ จะแจ้งล่วงหน้าตามสมควรผ่านบริการก่อนวันมีผลบังคับ การใช้บริการต่อหลังวันมีผลถือเป็นการยอมรับข้อกำหนดที่แก้ไขแล้ว</p>
+        </div>
+
+        <h2 id="t-18"><span class="num">18</span><span lang="en">Contact</span><span lang="th">ติดต่อเรา</span></h2>
+        <div lang="en">
+          <p><strong>Operator</strong>: <strong>HORys</strong><br>
+          <strong>Email</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+        </div>
+        <div lang="th">
+          <p><strong>ผู้ให้บริการ</strong>: <strong>HORys</strong><br>
+          <strong>อีเมล</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+        </div>
+
+      </section>
+
+    </article>
+
+  </div>
+</main>
+
+<footer style="
+  margin-top: var(--space-12);
+  padding: var(--space-6) var(--space-8);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+">
+  <span>HORys · Celestial Timing</span>
+  <span>BUILD <span id="footerVersion">—</span> · <span id="footerDate">—</span></span>
+</footer>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'horys_legal_lang';
+  const DEFAULT_LANG = 'th';
+
+  function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.body.classList.toggle('lang-th', lang === 'th');
+    document.getElementById('htmlRoot').setAttribute('lang', lang);
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const isActive = b.dataset.lang === lang;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  function setTab(tab) {
+    document.querySelectorAll('.legal-tab').forEach(t => {
+      const on = t.dataset.tab === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.doc-section').forEach(s => {
+      s.classList.toggle('active', s.dataset.section === tab);
+    });
+    document.querySelectorAll('.toc-section').forEach(s => {
+      s.classList.toggle('active', s.dataset.toc === tab);
+    });
+    // update URL hash without scrolling
+    history.replaceState(null, '', '#' + tab);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // Bind language switcher
+  document.querySelectorAll('.lang-switch button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+
+  // Bind tabs
+  document.querySelectorAll('.legal-tab').forEach(t => {
+    t.addEventListener('click', () => setTab(t.dataset.tab));
+  });
+
+  // Init from URL hash or localStorage
+  let initLang = DEFAULT_LANG;
+  try { initLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG; } catch (e) {}
+  setLang(initLang);
+
+  const hash = (location.hash || '').replace('#', '');
+  if (hash === 'terms' || hash === 'privacy') {
+    setTab(hash);
+  } else if (hash.startsWith('t-')) {
+    setTab('terms');
+    setTimeout(() => document.getElementById(hash)?.scrollIntoView(), 50);
+  } else if (hash.startsWith('p-')) {
+    setTab('privacy');
+    setTimeout(() => document.getElementById(hash)?.scrollIntoView(), 50);
+  }
+
+  // TOC scroll-spy
+  const tocLinks = document.querySelectorAll('.legal-toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.legal-doc h2[id]').forEach(h => observer.observe(h));
+
+  // Static footer version (no backend on GitHub Pages)
+  const v = document.getElementById('footerVersion');
+  if (v) v.textContent = 'LEGAL 1.0';
+  const dt = document.getElementById('footerDate');
+  if (dt) dt.textContent = '2026-05-08';
+})();
+</script>
+
+</body>
+</html>
