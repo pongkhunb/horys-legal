@@ -389,11 +389,16 @@
       <span lang="th">นโยบายความเป็นส่วนตัว <span class="italic-accent">&amp;</span> ข้อกำหนดการใช้บริการ</span>
     </h1>
     <div class="legal-version">
-      <span><span class="key">Version</span><span id="docVersion">1.0</span></span>
+      <span><span class="key">Version</span><span id="docVersion">1.2</span></span>
       <span class="sep">·</span>
-      <span><span class="key">Effective</span><span id="effectiveDate">8 May 2026</span></span>
+      <span><span class="key">Effective</span><span id="effectiveDate">19 May 2026</span></span>
       <span class="sep">·</span>
       <span><span class="key">Jurisdiction</span>Thailand · PDPA B.E. 2562</span>
+    </div>
+
+    <div class="compliance-notice" role="note" style="background:#fef9e7;border:1px solid #e0c980;border-left:4px solid #c98b2a;padding:.85rem 1.1rem;margin:1.2rem 0 0;border-radius:4px;font-size:.85rem;color:#5a4920;line-height:1.6;">
+      <p lang="en" style="margin:0 0 .5rem;"><strong>⚠️ Known compliance gap (acknowledged):</strong> PDPA §23 requires the Data Controller's identity to include a registered name and physical address. This Policy currently uses contact-only mode (email channel — see Section 15) pending entity registration. The Operator commits to upgrading Section 15 within 90 days of public launch or upon reaching 100 active users, whichever comes first.</p>
+      <p lang="th" style="margin:0;"><strong>⚠️ ช่องว่างการปฏิบัติตามที่ทราบและรับรอง:</strong> มาตรา 23 ของพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคลกำหนดให้ผู้ควบคุมข้อมูลต้องระบุชื่อและที่อยู่ทางกายภาพที่จดทะเบียน นโยบายฉบับนี้ใช้การติดต่อทางอีเมลเท่านั้น (ดูข้อ 15) ในระหว่างที่ผู้ดำเนินการยังไม่ได้จดทะเบียนนิติบุคคล ผู้ดำเนินการให้คำมั่นว่าจะปรับปรุงข้อ 15 ภายใน 90 วันนับจากการเปิดบริการสาธารณะ หรือเมื่อมีผู้ใช้งานเกิน 100 ราย แล้วแต่อย่างใดจะถึงก่อน</p>
     </div>
   </div>
 
@@ -478,6 +483,31 @@
           <p>นโยบายความเป็นส่วนตัวฉบับนี้ (<span class="term">“นโยบาย”</span>) อธิบายแนวทางที่ HORys (<span class="term">“HORys”</span>, <span class="term">“เรา”</span>) เก็บรวบรวม ใช้ เปิดเผย เก็บรักษา และคุ้มครองข้อมูลส่วนบุคคล เมื่อท่านใช้งานบริการบอท Telegram ภายใต้ชื่อ <strong>@HORysBot</strong> (<span class="term">“บริการ”</span>)</p>
           <p>บริการนี้ดำเนินการโดย <strong>HORys</strong> (<span class="term">“ผู้ให้บริการ”</span>, <span class="term">“ผู้ควบคุมข้อมูลส่วนบุคคล”</span>) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (<span class="term">“พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล”</span> หรือ <span class="term">“PDPA”</span>) รวมถึงประกาศและแนวปฏิบัติของคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (<span class="term">“กคส.”</span>)</p>
           <p>การใช้บริการถือว่าท่านได้อ่านและเข้าใจนโยบายฉบับนี้แล้ว ในกรณีที่ฐานทางกฎหมายในการประมวลผลคือความยินยอม เราจะขอความยินยอมจากท่านแยกต่างหาก และท่านสามารถเพิกถอนความยินยอมได้ทุกเมื่อตามที่ระบุในข้อ 12</p>
+        </div>
+
+        <!-- ----- 1.5 White-Label Use ----- -->
+        <h2 id="p-1-5"><span class="num">1.5</span><span lang="en">White-Label Use &mdash; Two-Layer Controller Model</span><span lang="th">การใช้งานแบบ White-Label &mdash; โมเดลผู้ควบคุมสองชั้น</span></h2>
+        <div lang="en">
+          <p>HORys is offered both <strong>directly to end-users</strong> (this Policy applies) and as a <strong>white-label platform</strong> for third-party operators who deploy HORys under their own brand. The attribution of responsibilities under PDPA depends on which mode applies:</p>
+          <table class="legal-table">
+            <thead><tr><th>Scenario</th><th>Data Controller</th><th>HORys role</th></tr></thead>
+            <tbody>
+              <tr><td>Direct use via <code>horys.machinesmethods.com</code> or <code>@CocoHoraBot</code></td><td>The Operator identified in Section 15</td><td>Operator</td></tr>
+              <tr><td>White-label deployment (a partner uses HORys for their own users)</td><td>The white-label partner</td><td><strong>Data Processor</strong> under a Data Processing Agreement (DPA) with the partner</td></tr>
+            </tbody>
+          </table>
+          <p>If you access HORys via a white-label partner, please refer to that partner's own privacy notice &mdash; they are your Data Controller and own the data-handling relationship with you. HORys executes only the instructions set out in the DPA with that partner.</p>
+        </div>
+        <div lang="th">
+          <p>HORys ให้บริการทั้งแบบ <strong>direct-to-consumer</strong> (นโยบายฉบับนี้บังคับใช้) และแบบ <strong>แพลตฟอร์ม white-label</strong> สำหรับพันธมิตรที่นำแพลตฟอร์มของเราไปใช้ภายใต้แบรนด์ของตน การกำหนดความรับผิดชอบภายใต้ พ.ร.บ. คุ้มครองข้อมูลฯ ขึ้นอยู่กับโหมดที่ใช้</p>
+          <table class="legal-table">
+            <thead><tr><th>กรณี</th><th>ผู้ควบคุมข้อมูล</th><th>บทบาทของ HORys</th></tr></thead>
+            <tbody>
+              <tr><td>การใช้บริการโดยตรงผ่าน <code>horys.machinesmethods.com</code> หรือ <code>@CocoHoraBot</code></td><td>ผู้ดำเนินการตามที่ระบุในข้อ 15</td><td>ผู้ดำเนินการ</td></tr>
+              <tr><td>การใช้บริการแบบ white-label (พันธมิตรนำ HORys ไปใช้สำหรับผู้ใช้ของตน)</td><td>พันธมิตร white-label</td><td><strong>ผู้ประมวลผลข้อมูล</strong> ภายใต้ข้อตกลงประมวลผลข้อมูล (DPA) กับพันธมิตร</td></tr>
+            </tbody>
+          </table>
+          <p>หากท่านใช้งาน HORys ผ่านพันธมิตร white-label โปรดอ้างอิงนโยบายความเป็นส่วนตัวของพันธมิตรรายนั้น เนื่องจากพันธมิตรเป็นผู้ควบคุมข้อมูลของท่านและเป็นผู้จัดการความสัมพันธ์ในการประมวลผลข้อมูลกับท่าน HORys ดำเนินการตามคำสั่งที่ระบุใน DPA กับพันธมิตรเท่านั้น</p>
         </div>
 
         <!-- ----- 2. Definitions ----- -->
@@ -635,6 +665,12 @@
                 <td>Network transit and DDoS protection</td>
                 <td>Global edge network</td>
                 <td>TLS termination only; no persistent Personal Data storage. Connection metadata may be processed for security purposes.</td>
+              </tr>
+              <tr>
+                <td><strong>Google LLC</strong></td>
+                <td>OAuth 2.0 sign-in for the web channel — limited scope <code>email profile</code></td>
+                <td>United States</td>
+                <td>Google Cloud Data Processing Addendum + Standard Contractual Clauses for cross-border transfer. No Google Cloud APIs invoked beyond identity assertion. Tokens stored server-side, never in browser storage.</td>
               </tr>
               <tr>
                 <td><strong>Self-hosted infrastructure</strong></td>
@@ -827,11 +863,13 @@
         <h2 id="p-15"><span class="num">15</span><span lang="en">Contact</span><span lang="th">ติดต่อเรา</span></h2>
         <div lang="en">
           <p><strong>Data Controller</strong>: <strong>HORys</strong><br>
-          <strong>Email</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+          <strong>Email</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a><br>
+          <strong>Data Protection Officer</strong>: Not appointed &mdash; HORys does not meet PDPA mandatory DPO thresholds under Section 41(2): processing is not large-scale, sensitive-data processing is not a core activity, and the Operator is not a state authority. For all PDPA-related correspondence, please use the email address above.</p>
         </div>
         <div lang="th">
           <p><strong>ผู้ควบคุมข้อมูลส่วนบุคคล</strong>: <strong>HORys</strong><br>
-          <strong>อีเมล</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a></p>
+          <strong>อีเมล</strong>: <a href="mailto:taronx.ai@gmail.com">taronx.ai@gmail.com</a><br>
+          <strong>เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)</strong>: ไม่ได้แต่งตั้ง &mdash; HORys ไม่เข้าข่ายข้อกำหนดบังคับให้แต่งตั้ง DPO ตามมาตรา 41(2) เนื่องจากการประมวลผลไม่ใช่ขนาดใหญ่ ไม่ได้ประมวลผลข้อมูลที่อ่อนไหวเป็นกิจกรรมหลัก และผู้ดำเนินการไม่ใช่หน่วยงานของรัฐ สำหรับการติดต่อเกี่ยวกับ PDPA ทั้งหมด โปรดใช้อีเมลข้างต้น</p>
         </div>
 
       </section>
