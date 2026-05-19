@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-  <polygon fill="#2C5F5D" points="50,5 90,27 90,73 50,95 10,73 10,27"/>
+<!--
+  HORys mark v4 — yantra hexagram (Star of David) with central bindu +
+  3 radiating rays (one up, two down-diagonal). Transparent background.
+  Inspired by Thai ดวงผูก (birth chart) sacred geometry, stripped of
+  Thai numerals/ornament for a modern minimal expression.
+  Use inline (chat avatar, headers, og:image, anywhere on light bg).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+  <!-- Upward equilateral triangle -->
+  <polygon points="100,40 48,130 152,130" fill="none" stroke="#2C5F5D" stroke-width="3" stroke-linejoin="miter"/>
+  <!-- Downward equilateral triangle (inverted) — interlocks above -->
+  <polygon points="100,160 48,70 152,70" fill="none" stroke="#2C5F5D" stroke-width="3" stroke-linejoin="miter"/>
+  <!-- 3 radiating lines from center: up, down-left, down-right (120° apart) -->
+  <line x1="100" y1="92" x2="100" y2="70" stroke="#2C5F5D" stroke-width="2.5"/>
+  <line x1="93" y1="104" x2="74" y2="115" stroke="#2C5F5D" stroke-width="2.5"/>
+  <line x1="107" y1="104" x2="126" y2="115" stroke="#2C5F5D" stroke-width="2.5"/>
+  <!-- Central bindu (planet) — solid ink black -->
+  <circle cx="100" cy="100" r="8" fill="#0A0A0A"/>
 </svg>
