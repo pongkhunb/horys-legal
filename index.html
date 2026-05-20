@@ -387,9 +387,9 @@
       <span lang="th">นโยบายความเป็นส่วนตัว <span class="italic-accent">&amp;</span> ข้อกำหนดการใช้บริการ</span>
     </h1>
     <div class="legal-version">
-      <span><span class="key">Version</span><span id="docVersion">1.2</span></span>
+      <span><span class="key">Version</span><span id="docVersion">1.4</span></span>
       <span class="sep">·</span>
-      <span><span class="key">Effective</span><span id="effectiveDate">19 May 2026</span></span>
+      <span><span class="key">Effective</span><span id="effectiveDate">20 May 2026</span></span>
       <span class="sep">·</span>
       <span><span class="key">Jurisdiction</span>Thailand · PDPA B.E. 2562</span>
     </div>
@@ -541,9 +541,10 @@
           <h3>3.1 Data You Provide</h3>
           <ul>
             <li><strong>Birth data</strong>: date of birth, time of birth (if provided), and place of birth (city or province), used solely for astrological computation;</li>
-            <li><strong>Telegram identifiers</strong>: Telegram user ID and, where publicly available, Telegram username and display name;</li>
+            <li><strong>Account identifiers</strong>: email and display name (via Google OAuth on the web channel); Telegram user ID, username, and display name (where publicly available);</li>
             <li><strong>Free-text inputs</strong>: questions, names, or numerical data submitted via bot menus (e.g., a name for analysis, a phone number for numerology);</li>
-            <li><strong>Saved preferences</strong>: bookmarks of charts, lottery searches, or named profiles, when you elect to save them.</li>
+            <li><strong>Saved preferences</strong>: bookmarks of charts, lottery searches, or named profiles, when you elect to save them;</li>
+            <li><strong>Payment artefacts</strong>: bank-transfer slip images (PromptPay top-up) and transaction reference codes returned by our verification processor (SlipOK), retained transiently to confirm credit top-ups.</li>
           </ul>
           <h3>3.2 Data Collected Automatically</h3>
           <ul>
@@ -556,9 +557,10 @@
           <h3>3.1 ข้อมูลที่ท่านให้กับเรา</h3>
           <ul>
             <li><strong>ข้อมูลการเกิด</strong>: วันเกิด เวลาเกิด (หากระบุ) และสถานที่เกิด (จังหวัดหรือเมือง) ใช้เฉพาะเพื่อการคำนวณทางโหราศาสตร์</li>
-            <li><strong>ข้อมูลระบุตัวตนใน Telegram</strong>: หมายเลขผู้ใช้ (Telegram User ID) และชื่อผู้ใช้ที่ตั้งเปิดเผย (หากมี)</li>
+            <li><strong>ข้อมูลระบุบัญชี</strong>: อีเมลและชื่อที่แสดง (ผ่าน Google OAuth บนช่องทางเว็บ) หมายเลขผู้ใช้ ชื่อผู้ใช้ และชื่อที่แสดงของ Telegram (หากเปิดเผยต่อสาธารณะ)</li>
             <li><strong>ข้อมูลที่ป้อนผ่านบอท</strong>: ข้อความ คำถาม ชื่อ-นามสกุล หรือข้อมูลตัวเลขที่ท่านส่งผ่านเมนู เช่น ชื่อสำหรับวิเคราะห์ หมายเลขโทรศัพท์เพื่อตรวจเลขมงคล</li>
             <li><strong>ข้อมูลที่บันทึกตามคำสั่ง</strong>: ดวงที่บันทึก หวยที่ค้นไว้ หรือโปรไฟล์ที่ท่านตั้งชื่อ</li>
+            <li><strong>หลักฐานการชำระเงิน</strong>: ภาพสลิปโอนเงิน (PromptPay เติมเครดิต) และรหัสอ้างอิงธุรกรรม ที่ส่งกลับจากผู้ตรวจสอบสลิป (SlipOK) เก็บรักษาเป็นการชั่วคราวเพื่อยืนยันการเติมเครดิต</li>
           </ul>
           <h3>3.2 ข้อมูลที่ระบบเก็บโดยอัตโนมัติ</h3>
           <ul>
@@ -647,28 +649,52 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Anthropic, PBC</strong></td>
-                <td>AI inference for astrological narrative content (Claude API)</td>
+                <td><strong>Anthropic, PBC (Claude API)</strong></td>
+                <td>AI inference for astrological narrative content — <em>default model</em></td>
                 <td>United States</td>
-                <td>Contractual data-processing terms; transient processing only; no Personal Data is retained by Anthropic for model training under their commercial API.</td>
+                <td>Contractual data-processing terms (Commercial Terms §5-7); transient processing only; no Personal Data is retained by Anthropic for model training under their commercial API.</td>
+              </tr>
+              <tr>
+                <td><strong>Google LLC (Gemini API)</strong></td>
+                <td>AI inference for astrological narrative content — <em>when admin selects Gemini per feature</em></td>
+                <td>United States</td>
+                <td>Google Cloud Data Processing Addendum + Standard Contractual Clauses for cross-border transfer.</td>
+              </tr>
+              <tr>
+                <td><strong>OpenAI, OpC LLC (GPT API)</strong></td>
+                <td>AI inference for astrological narrative content — <em>when admin selects GPT per feature</em></td>
+                <td>United States</td>
+                <td>OpenAI Business DPA + Standard Contractual Clauses; transient processing under their API Data Usage policy (no model training on API inputs).</td>
+              </tr>
+              <tr>
+                <td><strong>Ollama Typhoon (self-hosted)</strong></td>
+                <td>AI inference for astrological narrative content — <em>Thai-language model, runs on Operator infrastructure</em></td>
+                <td>Thailand (local)</td>
+                <td>No external processor; data stays on HORys infrastructure. Open-source model under Apache 2.0.</td>
+              </tr>
+              <tr>
+                <td><strong>SlipOK Co., Ltd.</strong></td>
+                <td>Automatic verification of PromptPay slip images for credit top-up</td>
+                <td>Thailand</td>
+                <td>Direct vendor contract under Thai jurisdiction; processes slip metadata (sender/receiver bank, amount, time, transaction reference). Slip images retained transiently for OCR + verification then deleted.</td>
               </tr>
               <tr>
                 <td><strong>Telegram FZ-LLC</strong></td>
-                <td>Message delivery</td>
+                <td>Bot messaging only (if you link Telegram)</td>
                 <td>United Arab Emirates / global</td>
-                <td>Required for Service delivery; Telegram processes messages under its own privacy policy. The user's relationship with Telegram is independent of HORys.</td>
+                <td>Required for Service delivery via the Telegram channel; Telegram processes messages under its own privacy policy. The user's relationship with Telegram is independent of HORys.</td>
               </tr>
               <tr>
                 <td><strong>Cloudflare, Inc.</strong></td>
-                <td>Network transit and DDoS protection</td>
+                <td>Network transit, CDN, TLS termination, and DDoS protection</td>
                 <td>Global edge network</td>
-                <td>TLS termination only; no persistent Personal Data storage. Connection metadata may be processed for security purposes.</td>
+                <td>Cloudflare DPA v6.4 (April 2026) + SCCs. TLS termination only; no persistent Personal Data storage. Connection metadata may be processed for security purposes.</td>
               </tr>
               <tr>
-                <td><strong>Google LLC</strong></td>
+                <td><strong>Google LLC (OAuth)</strong></td>
                 <td>OAuth 2.0 sign-in for the web channel — limited scope <code>email profile</code></td>
                 <td>United States</td>
-                <td>Google Cloud Data Processing Addendum + Standard Contractual Clauses for cross-border transfer. No Google Cloud APIs invoked beyond identity assertion. Tokens stored server-side, never in browser storage.</td>
+                <td>Google Cloud DPA + SCCs for cross-border transfer. No Google Cloud APIs invoked beyond identity assertion. Tokens stored server-side, never in browser storage.</td>
               </tr>
               <tr>
                 <td><strong>Self-hosted infrastructure</strong></td>
@@ -678,6 +704,7 @@
               </tr>
             </tbody>
           </table>
+          <p><strong>AI provider selection.</strong> The Operator may switch the active LLM per feature (e.g., ดูฤกษ์, ดูดวง, ทำนายหวย) via the admin AI-model registry. Each user request is sent to exactly one provider; data is never duplicated across providers. The current routing table is available on request.</p>
           <p>Where third-party services are required for Service delivery, your continued use of the Service constitutes acknowledgment that such transmission is necessary.</p>
         </div>
         <div lang="th">
@@ -688,22 +715,52 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Anthropic, PBC</strong></td>
-                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ (Claude API)</td>
+                <td><strong>Anthropic, PBC (Claude API)</strong></td>
+                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ — <em>โมเดลตั้งต้น</em></td>
                 <td>สหรัฐอเมริกา</td>
-                <td>มีสัญญาว่าด้วยการประมวลผลข้อมูล ประมวลผลแบบชั่วคราวเท่านั้น Anthropic ไม่นำข้อมูลส่วนบุคคลไปใช้ฝึกโมเดลภายใต้ข้อกำหนดของ commercial API</td>
+                <td>มีสัญญาว่าด้วยการประมวลผลข้อมูล (Commercial Terms §5-7) ประมวลผลแบบชั่วคราวเท่านั้น Anthropic ไม่นำข้อมูลส่วนบุคคลไปใช้ฝึกโมเดลภายใต้ข้อกำหนดของ commercial API</td>
+              </tr>
+              <tr>
+                <td><strong>Google LLC (Gemini API)</strong></td>
+                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ — <em>เมื่อ admin เลือกใช้ Gemini รายฟีเจอร์</em></td>
+                <td>สหรัฐอเมริกา</td>
+                <td>Google Cloud Data Processing Addendum + Standard Contractual Clauses สำหรับการส่งข้อมูลข้ามแดน</td>
+              </tr>
+              <tr>
+                <td><strong>OpenAI, OpC LLC (GPT API)</strong></td>
+                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ — <em>เมื่อ admin เลือกใช้ GPT รายฟีเจอร์</em></td>
+                <td>สหรัฐอเมริกา</td>
+                <td>OpenAI Business DPA + Standard Contractual Clauses ประมวลผลแบบชั่วคราวภายใต้ API Data Usage policy (ไม่นำข้อมูลไปฝึกโมเดล)</td>
+              </tr>
+              <tr>
+                <td><strong>Ollama Typhoon (self-hosted)</strong></td>
+                <td>การประมวลผล AI เพื่อสร้างคำพยากรณ์ — <em>โมเดลภาษาไทย ติดตั้งบนเซิร์ฟเวอร์ของผู้ให้บริการ</em></td>
+                <td>ประเทศไทย (ในประเทศ)</td>
+                <td>ไม่มีผู้ประมวลผลภายนอก ข้อมูลอยู่ภายในระบบของ HORys โมเดล Open Source ภายใต้สัญญาอนุญาต Apache 2.0</td>
+              </tr>
+              <tr>
+                <td><strong>SlipOK Co., Ltd.</strong></td>
+                <td>ตรวจสอบสลิปโอนเงิน PromptPay อัตโนมัติเพื่อเติมเครดิต</td>
+                <td>ประเทศไทย</td>
+                <td>สัญญาตรงกับผู้ให้บริการในประเทศไทย ประมวลผลข้อมูล metadata ของสลิป (ธนาคารผู้โอน/รับ จำนวนเงิน เวลา รหัสอ้างอิง) ภาพสลิปเก็บไว้ชั่วคราวเพื่อ OCR + ตรวจสอบ แล้วลบทิ้ง</td>
               </tr>
               <tr>
                 <td><strong>Telegram FZ-LLC</strong></td>
-                <td>ส่งข้อความ</td>
+                <td>ส่งข้อความเฉพาะช่องทาง Telegram (กรณีท่านเชื่อมต่อ Telegram)</td>
                 <td>สหรัฐอาหรับเอมิเรตส์ / ระดับสากล</td>
                 <td>จำเป็นต่อการให้บริการ Telegram ประมวลผลข้อความตามนโยบายของบริษัทเอง ความสัมพันธ์ระหว่างท่านกับ Telegram เป็นอิสระจาก HORys</td>
               </tr>
               <tr>
                 <td><strong>Cloudflare, Inc.</strong></td>
-                <td>ส่งผ่านการจราจรเครือข่าย ป้องกัน DDoS</td>
+                <td>ส่งผ่านการจราจรเครือข่าย CDN, TLS termination, และป้องกัน DDoS</td>
                 <td>เครือข่ายระดับสากล</td>
-                <td>การทำ TLS termination เท่านั้น ไม่จัดเก็บข้อมูลส่วนบุคคลถาวร อาจประมวลผลข้อมูล metadata ของการเชื่อมต่อเพื่อความปลอดภัย</td>
+                <td>Cloudflare DPA v6.4 (เม.ย. 2026) + SCCs การทำ TLS termination เท่านั้น ไม่จัดเก็บข้อมูลส่วนบุคคลถาวร อาจประมวลผลข้อมูล metadata ของการเชื่อมต่อเพื่อความปลอดภัย</td>
+              </tr>
+              <tr>
+                <td><strong>Google LLC (OAuth)</strong></td>
+                <td>การเข้าระบบผ่าน OAuth 2.0 บนช่องทางเว็บ — ขอบเขตจำกัด <code>email profile</code></td>
+                <td>สหรัฐอเมริกา</td>
+                <td>Google Cloud DPA + SCCs สำหรับการส่งข้อมูลข้ามแดน ไม่เรียก Google Cloud APIs นอกเหนือจากการยืนยันตัวตน Token เก็บไว้ฝั่งเซิร์ฟเวอร์ ไม่ใช่ใน browser</td>
               </tr>
               <tr>
                 <td><strong>โครงสร้างพื้นฐานที่เราดูแลเอง</strong></td>
@@ -713,6 +770,7 @@
               </tr>
             </tbody>
           </table>
+          <p><strong>การเลือกผู้ให้บริการ AI</strong> ผู้ให้บริการอาจสลับ LLM ที่ใช้งานรายฟีเจอร์ (เช่น ดูฤกษ์ ดูดวง ทำนายหวย) ผ่านระบบทะเบียนโมเดล AI ของ admin คำขอของผู้ใช้แต่ละครั้งส่งไปยังผู้ให้บริการเพียงรายเดียว ข้อมูลไม่ถูกส่งซ้ำข้ามผู้ให้บริการ ตารางการกำหนดเส้นทางปัจจุบันแจ้งให้ทราบได้เมื่อร้องขอ</p>
           <p>กรณีที่ต้องอาศัยบริการภายนอกเพื่อให้บริการครบถ้วน การที่ท่านใช้บริการต่อไปถือว่าท่านรับทราบว่าการส่งข้อมูลดังกล่าวเป็นสิ่งจำเป็น</p>
         </div>
 
